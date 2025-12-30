@@ -35,7 +35,7 @@ function Login() {
           <button>Continue com o Facebook</button>
         </section>
         <section>
-          <a href="#">Suporte</a>
+          <p>Suporte</p>
           <img src="#" alt="imagem de uma amiga abraçando outra com um sorriso solidário" />
           <h2>Comece sua jornada</h2>
           <p>Você já teve a sensação de que precisa de ajuda emocional, mas não sabe por onde começar? Isso te parece familiar?.</p>
