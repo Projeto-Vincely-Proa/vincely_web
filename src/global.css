@@ -1,0 +1,22 @@
+:root {
+    --color-primary: #3A5385;
+    --color-secondary: #6B7A99;
+
+    --color-background: #DDE8FF;
+    --color-surface: #FFFFFF;
+
+    --color-text-primary: #3A5385;
+    --color-text-secondary: #6B7A99;
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: all 100ms ease-in;
+}
+
+body {
+    font-family: 'Lexend', sans-serif;
+}
