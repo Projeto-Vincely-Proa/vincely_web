@@ -1,100 +1,27 @@
-.container {
-    display: flex;
-    height: 100vh;
-    
-   
-}
-
-.login-left {
-    width: 110%;
-    display: flex;
-    align-items: center;
-    background: #bed2fb;
-}
-
-.login-form {
-    width: 360px;
-}
-
-
-
-
-.logo {
-  width: 205px;  
-  height: 205px;
-  margin-bottom: 24px;
-  margin-top: -130px;
-  
- }
-
- .login-form h1 {
-    margin-bottom: 4px;
- }
-
- .criar-conta {
-    font-size: 14px;
-    margin-bottom: 24px;
- }
- .criar-conta a { 
-    color: #344058;
-
- }
-
- 
-
-
-
-
-.divider {
-   height: 50px;
-   padding: 0 10px;
-   margin-bottom: 10px
-}
-
-
-
-.login-form {
-    padding: 0 40px;
-}
-
-.icon {
-    width: 30px;
-    height: 30px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     
 }
 
-.social  {
-   border-radius: 50px;
-   height: 60px;
-   padding: 0 80;
-   margin-bottom: 20px;
-   
-    
+img {
+    max-width: 100vh;
+    height: auto;
 }
 
-
-
-
-
-.container {
-    display: flex;
-    width: 100%;
-}
-.login-right {
-    width: 80%;
-    padding: 100px;
-    font-size: large;
+.App {
+   justify-content: center;
+   align-items: center;
+   min-height: 130vh;
+   background-size: cover;
+   background-position: center;
+   background-image: url(Assets/img3.png);
 }
 
-
-
-
-
-
-body {
-    display: flex;
-    justify-content: left;
-    
+.body {
+    max-width: 100%;
+    overflow-x: hidden;
     
 }
 

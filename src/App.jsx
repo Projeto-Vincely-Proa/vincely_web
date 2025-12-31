@@ -1,13 +1,13 @@
-import { Routes, Route } from "react-router-dom";
-import Login from './pages/login/Login'
+import "./App.css";
+import Home from "./Components/Home";
 
 function App() {
     return (
-        <Routes>
-            <Route path='/' element={<h1>Em progresso...</h1>}/>
-            <Route path='/login' element={<Login />}/>
-        </Routes>
-    )
+        <div className="App">
+           <Home />
+        </div>
+    );
 }
+
 
 export default App;
