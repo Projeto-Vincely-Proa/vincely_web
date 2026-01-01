@@ -2,12 +2,11 @@ body {
     background-color: var(--color-background);
 }
 
-.login-layout {
+.container-layout {
     margin-left: 2rem;
     display: grid;
     grid-template-columns: .80fr 1fr;
     background-color: var(--color-background);
-    /* font-family: ; */
 }
 
 header {
@@ -20,7 +19,7 @@ header img {
     object-fit: cover;
 }
 
-main section.login-form {
+main section.container-form {
     padding: 0 2rem;
     display: flex;
     flex-direction: column;
@@ -28,23 +27,23 @@ main section.login-form {
     background-color: var(--color-background);
 }
 
-section.login-form h2 {
+section.container-form h2 {
     font-size: 2rem;
     color: var(--color-text-primary);
     margin-bottom: .5rem;
 }
 
-section.login-form p {
+section.container-form p {
     margin-bottom: 2rem;
 }
 
-section.login-form a {
+section.container-form a {
     color: var(--color-primary);
     text-decoration: underline;
     font-weight: 500;
 }
 
-section.login-form a:hover {
+section.container-form a:hover {
     color: var(--color-secondary);
 }
 
@@ -143,7 +142,7 @@ input[type="submit"]:hover {
 }
 
 @media (max-width: 1050px) {
-    .login-layout {
+    .container-layout {
         display: block;
     }
 }

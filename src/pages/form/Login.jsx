@@ -1,4 +1,4 @@
-import './login.css';
+import './form.css';
 
 import Logo from '../../assets/img/logo/logo.png';
 import SideForm from '../../components/forms/SideForm';
@@ -12,15 +12,15 @@ function Login() {
     <>
       <title>Login | Vincely</title>
 
-      <main className='login-layout'>
+      <main className='container-layout'>
         <div>
           <header>
             <h1><img src={Logo} alt="Imagem da logo do projeto" /></h1>
           </header>
 
-          <section className='login-form'>
+          <section className='container-form'>
             <h2>Login</h2>
-            <p>Não tem uma conta? <a href="/">Crie uma agora</a></p>
+            <p>Não tem uma conta? <a href="/cadastro">Crie uma agora</a></p>
 
             <form action="#" method='post'>
               <InputForm 
