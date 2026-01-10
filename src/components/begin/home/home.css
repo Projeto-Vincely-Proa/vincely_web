@@ -1,0 +1,22 @@
+.home-text-section {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-bottom: 8rem;
+}
+
+.primary-heading {
+    font-size: 2.5rem;
+    color: #FFFFFF;
+    max-width: 30%;
+    margin: 3rem 6rem;
+}
+
+.primary-text {
+    font-weight: 800;
+    font-size: 1.375rem;
+    line-height: 1.75rem;
+    margin: 3rem 6rem;
+    color: #9b9b9b;
+    max-width: 30%;
+}
