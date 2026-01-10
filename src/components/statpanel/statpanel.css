@@ -2,9 +2,9 @@
 .est-members-panel {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    width: 300px;
-    height: 852px;
+    gap: 1rem;
+    width: 18.75rem;
+    height: 53.25rem;
 }
 
 /* Container h2 + span */
@@ -12,18 +12,18 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 175px;
+    gap: 10.93rem;
 }
 
 .est-members-header h2 {
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 700;
     color: var(--color-text-dark);
     margin: 0;
 }
 
 .est-total-members {
-    font-size: 18px;
+    font-size: 1.12rem;
     font-weight: 600;
     color: var(--color-text-dark, #333);
 }
@@ -31,21 +31,21 @@
 /* Container de membros */
 .est-members-section {
     background-color: var(--color-surface);
-    border: 1px solid var(--color-surface-variant);
-    border-radius: 12px;
+    border: 0.06rem solid var(--color-surface-variant);
+    border-radius: 0.75rem;
     display: flex;
     flex-direction: column;
-    padding: 8px 0; 
+    padding: 0.5rem 0; 
 }
 
 /* Cada card */
 .est-card-container {
-    width: 300px;
-    height: 66px;
+    width: 18.75rem;
+    height: 4.12rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 6px 0; 
+    padding: 0.37rem 0; 
 
    
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -53,29 +53,29 @@
 
 /* Hover: aumenta levemente o card */
 .est-card-container:hover {
-    transform: scale(1.06); 
+    transform: scale(1.02); 
     
 }
 
 /* Linha separadora entre os cards */
 .est-card-container:not(:last-child) {
-    border-bottom: 1px solid var(--color-surface-variant);
-    margin-bottom: 10px;
-    padding-bottom: 10px;
+    border-bottom: 0.06rem solid var(--color-surface-variant);
+    margin-bottom: 0.62rem;
+    padding-bottom: 0.62rem;
 }
 
 /* Container da imagem e texto */
 .est-card-info {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 14px 16px;
+    gap: 0.5rem;
+    padding: 0.87rem 1rem;
 }
 
 /* Foto do membro */
 .est-card-info img {
-    width: 44px;
-    height: 44px;
+    width: 2.75rem;
+    height: 2.75rem;
     border-radius: 50%;
     flex-shrink: 0;
     transition: transform 0.2s ease; 
@@ -94,7 +94,7 @@
 
 /* Nome do membro */
 .est-card-text h3 {
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 600;
     margin: 0;
     color: var(--color-text-dark);
@@ -102,28 +102,28 @@
 
 /* @usuario */
 .est-card-text p {
-    font-size: 10px;
+    font-size: 0.62rem;
     font-weight: 500;
-    margin: 2px 0 0 0; 
+    margin: 0.12rem 0 0 0; 
     color: var(--color-text-opacity);
 }
 
 /* Footer do card (ícone + percentual) */
 .est-card-footer {
     margin-left: auto;
-    padding-right: 16px;
+    padding-right: 1rem;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 0.5rem;
 }
 
 .est-card-footer img {
-    width: 18px;
-    height: 18px;
+    width: 1.12rem;
+    height: 1.12rem;
 }
 
 .est-card-footer p span {
-    font-size: 15px;
+    font-size: 0.93rem;
     font-weight: 700;
     color: var(--color-text-dark);
 }
