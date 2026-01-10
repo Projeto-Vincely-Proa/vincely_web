@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-background);
+}
+
+/* Área geral do conteúdo  */
+.content-area {
+  margin-left: 15.62rem;
+  min-height: 100vh;
+}
+
+/* Layout interno: Feed + Stats */
+.layout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+}

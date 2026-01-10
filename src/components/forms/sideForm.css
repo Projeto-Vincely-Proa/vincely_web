@@ -1,0 +1,47 @@
+.side-form {
+  background-image: url('../../assets/img/forms/fundo-sideform.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--color-secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  color: var(--color-surface);
+  padding: 1rem 0;
+  gap: 3rem;
+}
+
+.side-form .side-form__tag {
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+}
+
+.side-form .side-form__icon {
+  margin-right: 1rem;
+  font-size: 2rem;
+  background-color: var(--color-surface);
+  color: var(--color-secondary);
+}
+
+.side-form .side-form__img {
+  max-height: 45%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.side-form h2 {
+  font-size: 2rem;
+}
+
+.side-form .side-form__description {
+  width: 300px;
+  text-align: center;
+}
+
+@media (max-width: 1050px) {
+  .side-form {
+    display: none;
+  }
+}

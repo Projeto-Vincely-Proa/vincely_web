@@ -1,0 +1,80 @@
+import './form.css';
+
+import Logo from '../../assets/img/logo/logo.png';
+import SideForm from '../../components/forms/SideForm';
+import InputForm from '../../components/forms/input/InputForm';
+
+import { FcGoogle } from 'react-icons/fc';
+import { FaFacebook } from "react-icons/fa6";
+
+function Login() {
+  return (
+    <>
+      <title>Login | Vincely</title>
+
+      <main className='container-layout'>
+        <div>
+          <header>
+            <h1><img src={Logo} alt="Imagem da logo do projeto" /></h1>
+          </header>
+
+          <section className='container-form'>
+            <h2>Login</h2>
+            <p>Não tem uma conta? <a href="/cadastro">Crie uma agora</a></p>
+
+            <form action="#" method='post'>
+              <InputForm 
+                label="E-mail"
+                type="email"
+                name="email"
+                id="email"
+                placeholder="exemplo@gmail.com"
+                
+              />
+
+              <InputForm 
+                label="Senha"
+                type="password"
+                name="pwd"
+                id="pwd"
+                placeholder="@#*%"
+              />
+
+              <div className='form-config'>
+                <div className='form-config__checkbox'>
+                  <input type="checkbox" name="remember" id="remember" />
+                  <label htmlFor="remember">Lembrar-me</label>
+                </div>
+
+                <a href="#">Esqueceu sua senha?</a>
+              </div>
+
+              <input type="submit" value="Entrar" />
+            </form>
+
+            <div className="divider">
+              <span>OU</span>
+            </div>
+
+            <div className="btn-icons">
+              <button>
+                <FcGoogle className='icons' />
+                Continue com Google
+              </button>
+
+              <button>
+                <FaFacebook className='icons'/>
+                Continue com Facebook
+              </button>
+            </div>
+          </section>
+        </div>
+
+        <SideForm />
+
+      </main>
+    </>
+  )
+}
+
+export default Login

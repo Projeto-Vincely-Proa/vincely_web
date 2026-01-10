@@ -1,0 +1,187 @@
+/* Feed Container */
+.layout-feed {
+    width: 65%;
+    min-height: 7.81rem;
+    margin-top: 1.9rem;
+    margin-left: 2rem;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.feed-column {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.posts {
+    width: 100%;
+    min-height: 29.87rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 1.25rem;
+    background-color: var(--color-surface);
+    border: 0.06rem solid var(--color-border);
+    border-radius: 1rem;
+    box-sizing: border-box;
+}
+
+/* Profile Section */
+.profile-post {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.profile-post img {
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-post .profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.12rem;
+}
+
+.profile-post h4 {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--color-text-dark);
+    line-height: 1.2;
+}
+
+.profile-post p {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--color-text-opacity);
+}
+
+/* Timestamp */
+.temp-post {
+    margin-left: auto;
+}
+
+.temp-post p {
+    font-size: 0.68rem;
+    color: var(--color-text-opacity);
+}
+
+.temp-post span {
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+/* Post Content */
+.post-conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.post-conteudo img {
+    width: 100%;
+    max-height: 22.5rem;
+    object-fit: cover;
+    border-radius: 0.75rem;
+}
+
+.post-conteudo p {
+    font-size: 0.87rem;
+    color: var(--color-text-opacity);
+    line-height: 1.5;
+    word-break: break-word;
+}
+
+/* Icons / Reactions */
+.icons-reac {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.75rem;
+}
+
+.icons-reac .interact {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Botões gerais dentro do feed */
+.icons-reac button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.icons-reac button img {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+/* Botões da div .react */
+.icons-reac .react {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-sizing: border-box;
+}
+
+.icons-reac .react button {
+    background: none;
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    background-color: #dbd9d9;
+
+    width: 3.12rem;
+    height: 1.56rem;
+    border-radius: 0.75rem;
+}
+
+.icons-reac .react button:hover {
+    background-color: var(--color-primary);
+    transform: translateY(-0.12rem);
+    transition: all 0.2s ease-in-out;
+}
+
+.icons-reac .react button:hover img {
+    filter: brightness(0) invert(1);
+    transition: filter 0.2s ease-in-out;
+}
+
+
+
+/* Botões da div .interact */
+.icons-reac .interact button {
+    width: 2.5rem;
+    height: 1.68rem;
+    border-radius: 0.75rem;
+    background-color: #F6F6F6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.icons-reac .interact button:hover {
+    transform: translateY(-0.12rem);
+}
+
+/* Leve efeito de levantamento para todos os ícones */
+.icons-reac .interact button:hover {
+    transform: translateY(-0.12rem);
+    transition: all 0.2s ease-in-out;
+}

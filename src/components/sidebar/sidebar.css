@@ -1,0 +1,214 @@
+.side-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 15.62rem;
+  height: 100vh;
+  background-color: var(--color-secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  z-index: 1000;
+}
+
+/* NAV  */
+.side-nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* LOGO */
+.logo {
+  width: 12.06rem;
+  height: 8.81rem;
+  margin-bottom: 2rem;
+}
+
+/* MENU CENTRALIZADO NO CORPO */
+.menu-wrapper {
+  flex: 1;
+  display: flex;
+}
+
+/* LISTA */
+.side-nav-list {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+/* ITEM */
+.side-nav-item {
+  margin-bottom: 1rem;
+}
+
+/* LINK */
+.side-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  font-family: "Lexend", sans-serif;
+  font-weight: 500;
+  font-size: 0.87rem;
+
+  color: var(--color-surface);
+  text-decoration: none;
+
+  width: 12.5rem;
+  height: 3.18rem;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+
+  background-color: transparent;
+
+  position: relative;
+
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease,
+    transform 0.35s ease;
+}
+
+
+.side-nav-link::before {
+  content: '';
+  position: absolute;
+  left: -1rem;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 0;
+  height: 2rem;
+
+  background-color: var(--color-surface);
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+
+  transition: width 0.35s ease;
+}
+
+/* COLUNA FIXA DOS ÍCONES */
+.icon-wrapper {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+}
+
+/* ÍCONES */
+.icon-wrapper img {
+  width: 0.93rem;
+  height: 0.93rem;
+  filter: brightness(0) invert(1);
+}
+
+/* TEXTO */
+.link-text {
+  white-space: nowrap;
+}
+
+/* HOVER Text side bar */
+.side-nav-link:hover {
+  cursor: pointer;
+  background-color: var(--color-surface);
+  color: var(--color-primary);
+  opacity: 1;
+
+  transform: translateX(0.06rem);
+  width: 12.5rem;
+  height: 3.18rem;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  gap: 0.5rem;
+}
+
+.side-nav-link:hover::before {
+  width: 0.37rem;
+}
+
+/* PERFIL */
+.container_profile {
+  background-color: var(--color-surface);
+  width: 12.62rem;
+  height: 8.25rem;
+  border-radius: 1rem;
+
+  position: relative;
+  padding-top: 2.5rem;
+
+  margin: 0 auto;
+
+}
+
+.profile-user {
+  position: absolute;
+  top: -1.87rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.profile-user img {
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-card {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.profile-name {
+  color: var(--colo-text-dark);
+  font-size: 1.12rem;
+  font-weight: 500;
+
+}
+
+.logout-button {
+  background-color: var(--color-button-logout);
+  color: var(--color-surface);
+
+  width: 10.62rem;
+  height: 2.68rem;
+  border-radius: 0.75rem;
+  border: none;
+
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  font-size: 0.87rem;
+  cursor: pointer;
+}
+
+.logout-button img {
+  width: 1rem;
+  height: 1rem;
+  display: block;
+
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* HOVER Container, img e button profile */
+.logout-button:hover {
+  background-color: var(--color-primary);
+
+}
+
+.logout-button:hover img {
+  transform: scale(1.2);
+  filter: brightness(1.2);
+}

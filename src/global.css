@@ -1,0 +1,30 @@
+:root {
+    --color-primary: #3A5385;
+    --color-secondary: #6B7A99;
+
+    --color-background: #DDE8FF;
+    --color-surface: #FFFFFF;
+    --color-surface-variant: #F1F1F1;
+
+    --color-text-primary: #3A5385;
+    --color-text-secondary: #6B7A99;
+    --color-text-dark: #1A1A21;
+    --color-text-light: #E3E3E3;
+    --color-text-opacity: #76767A;
+
+    --color-button-logout: #071A41B0;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: all 300ms ease-in;
+    font-family: 'Lexend', sans-serif;
+}
+
+body {
+    font-family: 'Lexend', sans-serif;
+    background-color: var(--color-background);
+ 
+}
