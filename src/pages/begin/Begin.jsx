@@ -1,4 +1,4 @@
-import "./Begin.css";
+import "./begin.css";
 import About from "../../components/begin/about/About";
 import Home from "../../components/begin/home/Home";
 import Navbar from "../../components/begin/navbar/Navbar";
@@ -9,21 +9,24 @@ import Footer from "../../components/begin/footer/Footer";
 
 function Begin() {
     return (
-        <div className="Begin">
-            <header>
-                <Navbar />
-            </header>
+        <>
+            <title>Tela de Apresentação | Vincely</title>
 
-             <main>
-                <Home />
-                <About />
-                <Landing />
-                <Testemonial />
-                <Footer />
-            </main>
+            <div className="Begin">
+                <header>
+                    <Navbar />
+                </header>
 
-        </div>
+                <main>
+                    <Home />
+                    <About />
+                    <Landing />
+                    <Testemonial />
+                    <Footer />
+                </main>
 
+            </div>
+        </>
     );
 };
 
