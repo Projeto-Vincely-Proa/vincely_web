@@ -1,0 +1,63 @@
+import Img2 from "../../../assets/img2.png";
+import Img1 from "../../../assets/img1.png";
+import './about.css';
+
+
+
+const About = () => {
+  return (
+    <>
+      <section className="about-section-container container" id="about">
+
+        
+          <img src={Img2} alt="imagem de pessoas se abraçando" />
+      
+
+        <div className="about-section-text-container">
+          <div className="about-line"></div>
+          <h2 className="secondy-heading">Você está em boas mãos</h2>
+
+          <p className="secondy-text">
+            Quando a ansiedade parece tomar conta e os pensamentos não param,
+            é difícil encontrar calma. Aqui você encontra um espaço pensado para
+            ajudar a desacelerar, respirar fundo e descobrir formas de lidar com
+            os desafios do dia a dia com mais leveza e segurança.
+          </p>
+
+          <button className="second-button">
+            Quero ajuda <span className="arrow">→</span>
+          </button>
+        </div>
+
+      </section>
+
+
+      <section className="about-section-container container reverse">
+
+       
+          <img src={Img1} alt="imagem de pessoas se abraçando" />
+       
+
+        <div className="about-section-text-container">
+          <div className="about-line"></div>
+          <h2 className="secondy-heading">Você está em boas mãos</h2>
+
+          <p className="secondy-text">
+            A depressão pode fazer parecer que a vida perdeu a cor
+            e que cada passo é pesado demais. Mas você não precisa
+            enfrentar isso sozinho. Este espaço foi criado para oferecer
+            acolhimento, apoio e recursos que podem ajudar a iluminar o
+            caminho e mostrar que existe esperança e novas possibilidades.
+          </p>
+
+          <button className="second-button">Quero ajuda<span className="arrow">→</span>
+          </button>
+
+        </div>
+      </section>
+    </>
+  );
+};
+
+
+export default About;
