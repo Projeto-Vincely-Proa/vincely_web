@@ -16,9 +16,6 @@ const Navbar = () => {
         <a href="#home">Home</a>
         <a href="#about">Sobre</a>
         <a href="#testemonial">Avaliação</a>
-        <a href="#">link</a>
-
-
 
         <button className="primary-button">
           Cadastro<span className="arrow">→</span>

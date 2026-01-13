@@ -13,6 +13,7 @@ body {
 
 .Begin {
     height: 120vh;
+    border: 1px solid transparent;
     max-width: 1700px;
     background-size: cover;
     background-image: url("../../assets/img3.png");
