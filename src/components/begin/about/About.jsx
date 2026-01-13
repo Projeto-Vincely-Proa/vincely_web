@@ -1,5 +1,5 @@
-import Img2 from "../../../assets/img2.png";
-import Img1 from "../../../assets/img1.png";
+import img2 from "../../../assets/img2.png";
+import img1 from "../../../assets/img1.png";
 import './about.css';
 
 
@@ -10,7 +10,7 @@ const About = () => {
       <section className="about-section-container container" id="about">
 
         
-          <img src={Img2} alt="imagem de pessoas se abraçando" />
+          <img src={img2} alt="imagem de pessoas se abraçando" />
       
 
         <div className="about-section-text-container">
@@ -35,7 +35,7 @@ const About = () => {
       <section className="about-section-container container reverse">
 
        
-          <img src={Img1} alt="imagem de pessoas se abraçando" />
+          <img src={img1} alt="imagem de pessoas se abraçando" />
        
 
         <div className="about-section-text-container">
