@@ -12,6 +12,7 @@ body {
 
 
 .Begin {
+    border: 1px solid transparent;
     height: 120vh;
     border: 1px solid transparent;
     max-width: 1700px;
