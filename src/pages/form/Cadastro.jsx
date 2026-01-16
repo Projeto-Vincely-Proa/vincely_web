@@ -1,6 +1,6 @@
 import './form.css';
 
-import Logo from '../../assets/img/logo/logo.png';
+import Logo from '../../assets/Logo.png';
 import SideForm from '../../components/forms/SideForm';
 import InputForm from '../../components/forms/input/InputForm';
 
@@ -11,8 +11,8 @@ function Cadastro() {
 
       <main className='container-layout'>
         <div>
-          <header>
-            <h1><img src={Logo} alt="Imagem da logo do projeto" /></h1>
+          <header className='header-form'>
+            <h1><img src={Logo} alt="Vincely" /></h1>
           </header>
 
           <section className='container-form'>
