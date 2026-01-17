@@ -1,31 +1,40 @@
-import React from "react";
-import Logo from "../../../assets/Logo.png"
-import './navbar.css';
-
+import './navbar.css'
+import Logo from '../../../assets/Logo.png'
+import {
+  MenuHamburguer,
+  MenuButton,
+  MenuContent
+} from '../menu';
+import { IoIosClose } from "react-icons/io";
 
 const Navbar = () => {
   return (
-    <nav>
+    <header className="navbar-container">
       <div className="nav-logo-container">
         <h1>
-          <img src={Logo} alt="logo vincely" />
+          <img src={Logo} alt="Vincely" />
         </h1>
       </div>
-      
-      <div className="navbar-links-container">
-        <a href="#home">Home</a>
-        <a href="#about">Sobre</a>
-        <a href="#testemonial">Avaliação</a>
 
+      <MenuHamburguer>
+        <MenuButton />
+        <MenuContent>
+          <nav className="navbar-links-container">
+            <button><IoIosClose className='close-btn' /></button>
+            <ul className='menu'>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">Sobre</a></li>
+              <li><a href="#testemonial">Avaliação</a></li>
+            </ul>
 
+            <a href="/cadastro" className="primary-button">
+              Cadastro <span className="arrow">→</span>
+            </a>
+          </nav>
+        </MenuContent>
+      </MenuHamburguer>
+    </header>
+  )
+}
 
-        <button className="primary-button">
-          Cadastro<span className="arrow">→</span>
-        </button>
-      </div>
-    </nav>
-
-  );
-
-};
-export default Navbar;
+export default Navbar
