@@ -1,11 +1,11 @@
 :root {
     --color-primary: #3A5385;
     --color-secondary: #6B7A99;
+    --color-surface: #FFFFFF;
+    --color-surface-variant: #F1F1F1;
 
     --color-background: #DDE8FF;
     --color-background-dark: rgba(0, 0, 0, 0.384);
-    --color-surface: #FFFFFF;
-    --color-surface-variant: #F1F1F1;
 
     --color-text-primary: #3A5385;
     --color-text-secondary: #6B7A99;
@@ -14,6 +14,12 @@
     --color-text-opacity: #76767A;
 
     --color-button-logout: #071A41B0;
+
+    --color-line: linear-gradient(to right, #0E234E 10%, #fff 95%);
+
+    --size-title-2: clamp(1.25rem, 4vw, 1.875rem);
+    --size-paragraph: clamp(.875rem, 3vw, 1.125rem);
+    --size-width-paragraph: clamp(35ch, 55vw, 45ch);
 }
 
 * {
