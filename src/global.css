@@ -7,7 +7,8 @@
     --color-background: #DDE8FF;
     --color-background-dark: rgba(0, 0, 0, 0.384);
     --color-background-linear: linear-gradient(to top right, #3A5385 10%, #A9C5FF 95%);
-    
+    --color-background-linear-2: linear-gradient(to bottom left, #3A5385 70%, #A9C5FF 95%);
+
     --color-text-primary: #3A5385;
     --color-text-secondary: #6B7A99;
     --color-text-dark: #1A1A21;
