@@ -6,7 +6,8 @@
 }
 
 .landing .container {
-    width: 40rem;
+    width: 100%;
+    max-width: 50rem;
 }
 
 .landing-line {
@@ -25,13 +26,29 @@
     text-align: center;
 }
 
-.landing p {
-    font-size: var(--size-paragraph);
-    color: var(--color-text-light);
-    font-weight: 600;
-    line-height: 1.5;
-    margin-bottom: .5rem;
-    text-align: center;
+.landing-cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 2rem;
+}
+
+.landing-cards .card {
+    background-color: var(--color-surface);
+    border-radius: 20px;
+    padding: 1rem 1rem;
+    width: 15rem;
+    height: 20rem;
+    color: var(--color-text-dark);
+    transition: transform 0.3s ease;
+}
+
+.landing-cards .card:hover {
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+    transform: scale(1.05);
 }
 
 .landing .container button {
