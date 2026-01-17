@@ -35,34 +35,6 @@ const Footer = () => {
                                 </a>
                             </div>
                         </div>
-
-
-                        <div className="footer-column">
-                            <h4>Cabeçalho d coluna</h4>
-                            <a href="#">O link vai aqui</a>
-                            <a href="#">O link vai aqui</a>
-                            <a href="#">O link vai aqui</a>
-                            <a href="#">O link vai aqui</a>
-                        </div>
-
-                        <div className="footer-column">
-                            <h4>Cabeçalho d coluna</h4>
-                            <a href="#">O link vai aqui</a>
-                            <a href="#">O link vai aqui</a>
-                            <a href="#">O link vai aqui</a>
-                            <a href="#">O link vai aqui</a>
-                        </div>
-
-                        <div className="footer-column">
-                            <h4>Cabeçalho d coluna</h4>
-                            <a href="#">O link vai aqui</a>
-                            <a href="#">O link vai aqui</a>
-                            <a href="#">O link vai aqui</a>
-                            <a href="#">O link vai aqui</a>
-                        </div>
-
-
-
                     </div>
                 </div>
 
