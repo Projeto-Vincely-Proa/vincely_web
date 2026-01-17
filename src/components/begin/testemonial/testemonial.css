@@ -1,48 +1,65 @@
 .testemonial {
-    padding: 6rem 0;
+    margin: 3rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-   
 }
 
 .testemonial-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 80%;
     max-width: 32.5rem;
-    text-align: center;
     margin-bottom: 3rem;
 }
 
 .testemonial-line {
     display: flex;
-    width: 20rem;
+    width: 75%;
+    max-width: 20rem;
     height: 0.25rem;
-    margin: 0 auto 2.5rem;
-    background: linear-gradient(to right, #FFAC12 40%, #000000 80%);
+    margin-bottom: 2rem;
+    background: var(--color-linear);
     border-radius: 2px;
 }
 
+.testemonial-text h2 {
+    font-size: var(--size-title-2);
+    margin-bottom: 1rem;
+}
+
 .testemonial-text p {
-    max-width: 22rem;
-    font-size: 1.5rem;
+    font-size: var(--size-paragraph);
     line-height: 1.3;
-    color: #040404;
+    color: var(--color-text-dark);
     font-weight: 600;
-    text-align: left;
+    text-align: center;
 }
 
 .testemonial-users {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
 }
 
-.user {
+.testemonial-users .user {
     display: flex;
     align-items: center;
-    padding: 1.25rem 5rem;
+    justify-content: center;
+
+    width: 20rem;
+    height: 6rem;
+    background-color: var(--color-surface);
+    border-radius: 20px;
+    border: 1px solid var(--color-primary);
+    transition: transform 0.3s ease;
 }
 
-.user img {
+.testemonial-users .user img {
     object-fit: cover;
     object-position: top;
     width: 3rem;
@@ -51,29 +68,23 @@
     margin-right: 1rem;
 }
 
-.user strong {
-    font-size: 14px;
+.testemonial-users .user strong {
+    font-size: 1.25rem;
 }
 
-.user span {
-    font-size: 15px;
-    color: #020202;
+.testemonial-users .user span {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-dark);
     opacity: 0.5;
 }
 
-.user.active {
-    background: #1C4532;
-   
-   
+.testemonial-users .user:hover {
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+    transform: scale(1.05);
 }
 
-.user.active img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 14px;
-}
-
-.user.active strong,
-.user.active span {
-    color: rgb(208, 201, 201);
+.testemonial-users .user:hover span {
+    color: var(--color-surface-variant);
 }
