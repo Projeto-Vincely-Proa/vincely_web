@@ -3,6 +3,7 @@
     --color-secondary: #6B7A99;
 
     --color-background: #DDE8FF;
+    --color-background-dark: rgba(0, 0, 0, 0.281);
     --color-surface: #FFFFFF;
     --color-surface-variant: #F1F1F1;
 
@@ -20,11 +21,10 @@
     margin: 0;
     box-sizing: border-box;
     transition: all 300ms ease-in;
-    font-family: 'Lexend', sans-serif;
 }
 
 body {
-    font-family: 'Lexend', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: var(--color-background);
  
 }
