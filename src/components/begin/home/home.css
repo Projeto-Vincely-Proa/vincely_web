@@ -1,5 +1,5 @@
 .home-background {
-    height: 100vh;
+    height: 110vh;
     padding: 0 5%;
     background-size: cover;
     background-image: url("../../../assets/img3.png");
@@ -18,7 +18,7 @@
     margin-top: 2rem;
     padding: 1.5rem;
 
-    height: 22rem;
+    height: 25rem;
     max-width: 40rem;
 
     display: flex;
@@ -27,13 +27,13 @@
 }
 
 .text-section .primary-heading {
-    font-size: clamp(1rem, 3.5vw, 1.875rem);
+    font-size: var(--size-title-2);
     color: var(--color-surface);
 }
 
 .text-section .primary-text {
     color: var(--color-text-light);
-    font-size: clamp(.875rem, 2vw, 1.125rem);
+    font-size: var(--size-paragraph);
     line-height: 1.75;
     font-weight: 700;
 }
