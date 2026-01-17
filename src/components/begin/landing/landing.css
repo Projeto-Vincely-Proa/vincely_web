@@ -1,49 +1,67 @@
-.landing-section-containe {
+.landing {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to right, #60AC8D, #1C4532FA 98.22%);
-    height: 100vh;
+    background-color: var(--color-secondary);
 }
 
-.landing-text-section-containe {
-    text-align: center;
-}
-
-.landing-text-section-containe button {
-    padding: 1.5rem 3rem;
-    margin: 2rem auto 0 auto;
-    background-color: #DFFFF0;
-    color: #050505;
-    font-size: 1rem;
-    font-weight: 500;
-    display: flex;
-    border: none;
-    gap: 1rem;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-.third-heading {
-    font-size: 2.8rem;
-    font-weight: 600;
-    color: #ffffff;
-    margin-bottom: 1.5rem;
+.landing .container {
+    width: 40rem;
 }
 
 .landing-line {
-    width: 35%;
+    width: 50%;
     height: 0.25rem;
-    background: linear-gradient(to right, #FFAC12 30%, rgba(0,0,0,0.1));
+    background: var(--color-linear);
     border-radius: 2px;
     margin: 0 auto 1rem auto;
 }
 
-.third-text {
-    font-size: 1.30rem;
-    margin-bottom: 5px;
-    color: #bbb1b1;
-    line-height: 1.5;
-    max-width: 26.75rem;
+.landing h2 {
+    font-size: var(--size-title-2);
+    font-weight: 600;
+    color: var(--color-surface-variant);
+    margin-bottom: 1.5rem;
     text-align: center;
+}
+
+.landing p {
+    font-size: var(--size-paragraph);
+    color: var(--color-text-light);
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: .5rem;
+    text-align: center;
+}
+
+.landing .container button {
+    width: 90%;
+    max-width: 25rem;
+    height: 4rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 800;
+    color: var(--color-text-dark);
+    font-size: var(--size-font-btn);
+    background-color: var(--color-surface);
+
+    gap: 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-top: 2rem;
+}
+
+.landing button .arrow {
+    font-weight: 800;
+    font-size: 2rem;
+}
+
+@media (min-width: 1000px) {
+    .landing {
+        background: var(--color-background-linear);
+    }
 }
