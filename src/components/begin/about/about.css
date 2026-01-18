@@ -3,7 +3,6 @@
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
-    border: 1px solid black;
 }
 
 .container {
@@ -89,7 +88,7 @@
     flex-direction: column-reverse;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1024px) {
     .about .container {
         flex-direction: row;
         justify-content: space-between;
