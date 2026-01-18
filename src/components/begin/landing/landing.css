@@ -22,7 +22,7 @@
     font-size: var(--size-title-2);
     font-weight: 600;
     color: var(--color-surface-variant);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     text-align: center;
 }
 
@@ -69,7 +69,7 @@
     border: none;
     cursor: pointer;
     border-radius: 20px;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
 }
 
 .landing button .arrow {
