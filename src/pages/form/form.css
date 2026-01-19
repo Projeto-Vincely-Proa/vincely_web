@@ -9,7 +9,7 @@ body {
     background-color: var(--color-background);
 }
 
-header {
+header.header-form {
     margin-top: 2rem;
 }
 
