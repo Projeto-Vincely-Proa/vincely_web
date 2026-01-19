@@ -23,9 +23,9 @@ const About = () => {
             os desafios do dia a dia com mais leveza e segurança.
           </p>
 
-          <button>
+          <a href='/cadastro' className='link-btn'>
             <span>Quero ajuda</span> <IoIosArrowRoundForward className='arrow' />
-          </button>
+          </a>
         </div>
 
       </div>
@@ -46,9 +46,9 @@ const About = () => {
             caminho e mostrar que existe esperança e novas possibilidades.
           </p>
 
-          <button>
+          <a href='/cadastro' className='link-btn'>
             <span>Quero ajuda</span> <IoIosArrowRoundForward className='arrow' />
-          </button>
+          </a>
 
         </div>
       </div>

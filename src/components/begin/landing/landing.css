@@ -51,7 +51,7 @@
     transform: scale(1.05);
 }
 
-.landing .container button {
+.landing .container .link-btn {
     width: 90%;
     max-width: 25rem;
     height: 4rem;
@@ -61,6 +61,7 @@
     justify-content: center;
 
     font-weight: 800;
+    text-decoration: none;
     color: var(--color-text-dark);
     font-size: var(--size-font-btn);
     background-color: var(--color-surface);
@@ -72,12 +73,12 @@
     margin-top: 2.5rem;
 }
 
-.landing button .arrow {
+.landing .link-btn .arrow {
     font-weight: 800;
     font-size: 2rem;
 }
 
-.landing button:hover .arrow {
+.landing .link-btn:hover .arrow {
     transform: translateX(5px);
     transition: 0.6s;
 }

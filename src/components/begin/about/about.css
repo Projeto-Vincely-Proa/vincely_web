@@ -56,7 +56,7 @@
     margin-bottom: 1rem;
 }
 
-.about-text button {
+.about-text .link-btn {
     background-color: var(--color-primary);
     color: var(--color-surface);
     width: 100%;
@@ -68,6 +68,7 @@
 
     font-size: var(--size-font-btn);
     font-weight: 600;
+    text-decoration: none;
 
     gap: 1rem;
     display: flex;
@@ -75,11 +76,11 @@
     justify-content: center;
 }
 
-.about-text button .arrow {
+.about-text .link-btn .arrow {
     font-size: 2rem;
 }
 
-.about-text button:hover .arrow {
+.about-text .link-btn:hover .arrow {
     transform: translateX(5px);
     transition: 0.6s;
 }

@@ -26,9 +26,9 @@ const Landing = () => {
                     </p>
                 </div>
 
-                <button>
+                <a href='/cadastro' className='link-btn'>
                     <span>Quero ajuda</span> <IoIosArrowRoundForward className='arrow' />
-                </button>
+                </a>
             </div>
 
         </section>
