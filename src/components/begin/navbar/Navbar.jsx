@@ -1,13 +1,17 @@
 import './navbar.css'
+
 import Logo from '../../../assets/Logo.png'
-import {
-  MenuHamburguer,
-  MenuButton,
-  MenuContent
-} from '../menu';
 import { IoIosClose } from "react-icons/io";
+import { IoIosMenu } from "react-icons/io";
+import { useRef } from 'react';
 
 const Navbar = () => {
+  const navRef = useRef();
+
+  const showNavbar = () => {
+    navRef.current.classList.toggle("responsive_nav");
+  }
+
   return (
     <header className="navbar-container">
       <div className="nav-logo-container">
@@ -16,23 +20,32 @@ const Navbar = () => {
         </h1>
       </div>
 
-      <MenuHamburguer>
-        <MenuButton />
-        <MenuContent>
-          <nav className="navbar-links-container">
-            <button><IoIosClose className='close-btn' /></button>
-            <ul className='menu'>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">Sobre</a></li>
-              <li><a href="#testemonial">Avaliação</a></li>
-            </ul>
+      <nav className='navbar-links-container' ref={navRef}>
+        <ul>
+          <li>
+            <a href="#home">Home</a>
+          </li>
+          <li>
+            <a href="#about">Sobre</a>
+          </li>
+          <li>
+            <a href="#testemonial">Avaliações</a>
+          </li>
+        </ul>
+        <button className='nav-btn close-nav-btn' onClick={showNavbar}>
+          <IoIosClose />
+        </button>
+      </nav>
+      <div className='navigation-btns'>
+        <a href="/cadastro" className="primary-button">
+          Cadastro <span className="arrow">→</span>
+        </a>
+        
+        <button className='nav-btn' onClick={showNavbar}>
+          <IoIosMenu />
+        </button>
+      </div>
 
-            <a href="/cadastro" className="primary-button">
-              Cadastro <span className="arrow">→</span>
-            </a>
-          </nav>
-        </MenuContent>
-      </MenuHamburguer>
     </header>
   )
 }
