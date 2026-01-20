@@ -7,7 +7,6 @@
 
 .landing .container {
     width: 100%;
-    max-width: 50rem;
 }
 
 .landing-line {
@@ -19,9 +18,8 @@
 }
 
 .landing h2 {
-    font-size: var(--size-title-2);
-    font-weight: 600;
-    color: var(--color-surface-variant);
+    font-size: var(--size-title-3);
+    color: var(--color-text-opacity-2);
     margin-bottom: 2rem;
     text-align: center;
 }
@@ -31,15 +29,14 @@
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
-    width: 100%;
     gap: 2rem;
 }
 
 .landing-cards .card {
     background-color: var(--color-surface);
     border-radius: 20px;
-    padding: 1rem 1rem;
-    width: 15rem;
+    padding: 2rem;
+    max-width: 20rem;
     height: 20rem;
     color: var(--color-text-dark);
     transition: transform 0.3s ease;
@@ -53,23 +50,23 @@
 
 .landing .container .link-btn {
     width: 90%;
-    max-width: 25rem;
+    max-width: 23.125rem;
     height: 4rem;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    font-weight: 800;
+    font-weight: 700;
     text-decoration: none;
-    color: var(--color-text-dark);
+    color: var(--color-text-primary);
     font-size: var(--size-font-btn);
     background-color: var(--color-surface);
 
     gap: 1rem;
     border: none;
     cursor: pointer;
-    border-radius: 20px;
+    border-radius: 15px;
     margin-top: 2.5rem;
 }
 
