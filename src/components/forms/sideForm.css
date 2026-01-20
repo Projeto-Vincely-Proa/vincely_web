@@ -5,7 +5,7 @@
   background-color: var(--color-secondary);
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   color: var(--color-surface);
   padding: 1rem 0;

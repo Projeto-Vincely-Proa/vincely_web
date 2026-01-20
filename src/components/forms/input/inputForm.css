@@ -4,8 +4,8 @@
 }
 
 label {
-    font-size: .875rem;
-    margin-bottom: .875rem;
+    margin-bottom: .25rem;
+    font-weight: 600;
 }
 
 input {
@@ -13,6 +13,5 @@ input {
     padding: .75rem .875rem;
     border-radius: .5rem;
     border: 1px solid #ccc;
-    font-size: .875rem;
     background-color: var(--color-surface);
 }
