@@ -27,13 +27,14 @@
 
 .testemonial-text h2 {
     font-size: var(--size-title-2);
+    color: var(--color-text-dark);
     margin-bottom: 1rem;
 }
 
 .testemonial-text p {
     font-size: var(--size-paragraph);
     line-height: 1.3;
-    color: var(--color-text-dark);
+    color: var(--color-text-opacity-2);
     font-weight: 600;
     text-align: center;
 }
@@ -75,8 +76,7 @@
 .testemonial-users .user span {
     font-size: 1rem;
     font-weight: 600;
-    color: var(--color-text-dark);
-    opacity: 0.5;
+    color: var(--color-text-opacity-2);
 }
 
 .testemonial-users .user:hover {

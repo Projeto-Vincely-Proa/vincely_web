@@ -7,7 +7,7 @@ const Landing = () => {
         <section className="landing" id='landing'>
             <div className="container">
                 <div className="landing-line"></div>
-                <h2>Você está em boas mãos</h2>
+                <h2>Quando a Vida Pesar, Estamos Aqui</h2>
 
                 <div className="landing-cards">
                     <p className='card'>
@@ -27,7 +27,7 @@ const Landing = () => {
                 </div>
 
                 <a href='/cadastro' className='link-btn'>
-                    <span>Quero ajuda</span> <IoIosArrowRoundForward className='arrow' />
+                    <span>Entrar na Comunidade</span> <IoIosArrowRoundForward className='arrow' />
                 </a>
             </div>
 

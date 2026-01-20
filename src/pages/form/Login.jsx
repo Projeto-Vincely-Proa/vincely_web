@@ -20,19 +20,18 @@ function Login() {
 
           <section className='container-form'>
             <h2>Login</h2>
-            <p>Não tem uma conta? <a href="/cadastro">Crie uma agora</a></p>
 
             <form action="/conteudo" method='get'>
-              <InputForm 
+              <InputForm
                 label="E-mail"
                 type="email"
                 name="email"
                 id="email"
                 placeholder="exemplo@gmail.com"
-                
+
               />
 
-              <InputForm 
+              <InputForm
                 label="Senha"
                 type="password"
                 name="pwd"
@@ -52,19 +51,27 @@ function Login() {
               <input type="submit" value="Entrar" />
             </form>
 
+            <p className='another-form'>Não tem uma conta? <a href="/cadastro">Crie uma agora</a></p>
+
+
             <div className="divider">
+
               <span>OU</span>
             </div>
 
             <div className="btn-icons">
               <button>
                 <FcGoogle className='icons' />
-                Continue com Google
+                <span className='btn-icons__text'>
+                  Continue com Google
+                </span>
               </button>
 
               <button>
-                <FaFacebook className='icons'/>
-                Continue com Facebook
+                <FaFacebook className='icons' />
+                <span className='btn-icons__text'>
+                  Continue com Facebook
+                </span>
               </button>
             </div>
           </section>

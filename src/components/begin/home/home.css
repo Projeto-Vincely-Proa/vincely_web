@@ -18,16 +18,16 @@
     margin-top: 2rem;
     padding: 1.5rem;
 
-    height: 25rem;
+    height: fit-content;
     max-width: 40rem;
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 1rem;
 }
 
 .text-section .primary-heading {
-    font-size: var(--size-title-2);
+    font-size: var(--size-title-1);
     color: var(--color-surface);
 }
 
@@ -35,7 +35,7 @@
     color: var(--color-text-light);
     font-size: var(--size-paragraph);
     line-height: 1.75;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 @media (min-width: 750px) {
