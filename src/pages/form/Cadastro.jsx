@@ -17,10 +17,10 @@ function Cadastro() {
 
           <section className='container-form'>
             <h2>Cadastrar</h2>
-            <p>Já tem uma conta? <a href="/login">Entre agora</a></p>
+
 
             <form action="/conteudo" method='get'>
-              <InputForm 
+              <InputForm
                 label="Nome Completo"
                 type="text"
                 name="name"
@@ -28,7 +28,7 @@ function Cadastro() {
                 placeholder="Ismaiara Carvalho de Oliveira"
               />
 
-              <InputForm 
+              <InputForm
                 label="Telefone"
                 type="number"
                 name="telefone"
@@ -36,7 +36,7 @@ function Cadastro() {
                 placeholder="192922001001"
               />
 
-              <InputForm 
+              <InputForm
                 label="E-mail"
                 type="email"
                 name="email"
@@ -44,7 +44,7 @@ function Cadastro() {
                 placeholder="exemplo@gmail.com"
               />
 
-              <InputForm 
+              <InputForm
                 label="Senha"
                 type="password"
                 name="pwd"
@@ -54,6 +54,9 @@ function Cadastro() {
 
               <input type="submit" value="Entrar" />
             </form>
+
+            <p className='another-form'>Já tem uma conta? <a href="/login">Entre agora</a></p>
+
           </section>
         </div>
 
