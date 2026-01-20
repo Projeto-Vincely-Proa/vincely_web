@@ -7,37 +7,30 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: var(--color-surface);
+  color: var(--color-text-light);
   padding: 1rem 0;
-  gap: 3rem;
-}
-
-.side-form .side-form__tag {
-  font-size: 1.25rem;
-  display: flex;
-  align-items: center;
-}
-
-.side-form .side-form__icon {
-  margin-right: 1rem;
-  font-size: 2rem;
-  background-color: var(--color-surface);
-  color: var(--color-secondary);
+  height: 100%;
+  gap: 1rem;
 }
 
 .side-form .side-form__img {
-  max-height: 45%;
+  height: 45%;
   border-radius: 50%;
   object-fit: cover;
 }
 
+.side-form .side-form__text {
+  text-align: center;
+}
+
 .side-form h2 {
-  font-size: 2rem;
+  font-size: var(--size-title-3);
 }
 
 .side-form .side-form__description {
-  width: 300px;
+  width: 50ch;
   text-align: center;
+  font-size: var(--size-paragraph);
 }
 
 @media (max-width: 1050px) {
