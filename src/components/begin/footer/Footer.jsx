@@ -25,7 +25,7 @@ const Footer = () => {
                     <a href="https://github.com/Projeto-Vincely-Proa" aria-label="Github">
                         <FaGithub />
                     </a>
-                    <a href="#" aria-label="Linkedin">
+                    <a href="https://www.linkedin.com/in/vincely-social-1275903a4/" aria-label="Linkedin">
                         <FaLinkedin />
                     </a>
 
