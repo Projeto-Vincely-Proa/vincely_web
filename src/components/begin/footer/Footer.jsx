@@ -24,14 +24,29 @@ const Footer = () => {
                 </a>
 
                 <div className="socials">
-                    <a href="https://github.com/Projeto-Vincely-Proa" target='_blank' aria-label="Github">
+                    <a 
+                    href="https://github.com/Projeto-Vincely-Proa" 
+                    target='_blank' 
+                    rel="noopener noreferrer" 
+                    aria-label="Github"
+                    >
                         <FaGithub />
                     </a>
-                    <a href="https://www.linkedin.com/in/vincely-social-1275903a4/" target='_blank' aria-label="Linkedin">
+                    <a 
+                    href="https://www.linkedin.com/in/vincely-social-1275903a4/" 
+                    target='_blank' 
+                    rel="noopener noreferrer" 
+                    aria-label="Linkedin"
+                    >
                         <FaLinkedin />
                     </a>
 
-                    <a href="https://www.instagram.com/vincely_social/" target='_blank' aria-label="Instagram">
+                    <a 
+                    href="https://www.instagram.com/vincely_social/" 
+                    target='_blank' 
+                    rel="noopener noreferrer" 
+                    aria-label="Instagram"
+                    >
                         <FaInstagram />
                     </a>
                 </div>
