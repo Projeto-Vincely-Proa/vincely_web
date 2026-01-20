@@ -22,7 +22,7 @@ function Login() {
             <h2>Login</h2>
             <p>Não tem uma conta? <a href="/cadastro">Crie uma agora</a></p>
 
-            <form action="#" method='post'>
+            <form action="/conteudo" method='get'>
               <InputForm 
                 label="E-mail"
                 type="email"
@@ -46,7 +46,7 @@ function Login() {
                   <label htmlFor="remember">Lembrar-me</label>
                 </div>
 
-                <a href="#">Esqueceu sua senha?</a>
+                <a href="/login">Esqueceu sua senha?</a>
               </div>
 
               <input type="submit" value="Entrar" />
