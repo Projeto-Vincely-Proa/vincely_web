@@ -13,7 +13,7 @@ const Navbar = () => {
   }
 
   return (
-    <header className="navbar-container">
+    <header className="navbar-container" id='navbar'>
       <div className="nav-logo-container">
         <h1>
           <img src={Logo} alt="Vincely" />
@@ -29,7 +29,7 @@ const Navbar = () => {
             <a href="#about">Sobre</a>
           </li>
           <li>
-            <a href="#testemonial">Avaliações</a>
+            <a href="#testemonial">Depoimentos</a>
           </li>
         </ul>
         <button className='nav-btn close-nav-btn' onClick={showNavbar}>
