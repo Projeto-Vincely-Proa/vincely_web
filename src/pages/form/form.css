@@ -59,6 +59,12 @@ form>div.form-config {
     font-size: .875rem;
 }
 
+/* form>div.form-config .form-config__checkbox {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+} */
+
 form>div.form-config label {
     margin-left: .375rem;
 }
@@ -82,6 +88,7 @@ input[type="submit"]:hover {
 #remember {
     background-color: var(--color-background);
     border-color: var(--color-primary);
+    margin-bottom: 0;
 }
 
 .divider {

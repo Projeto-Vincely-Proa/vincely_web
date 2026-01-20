@@ -2,7 +2,7 @@ import './footer.css';
 
 import logo from "../../../assets/Logo1.png";
 
-import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { IoIosArrowRoundForward } from "react-icons/io";
 
 
@@ -22,14 +22,14 @@ const Footer = () => {
                 <img src={logo} alt="logo Vincely" className="footer-logo" />
 
                 <div className="socials">
-                    <a href="#" aria-label="Facebook">
-                        <FaFacebookF />
+                    <a href="https://github.com/Projeto-Vincely-Proa" aria-label="Github">
+                        <FaGithub />
                     </a>
-                    <a href="#" aria-label="Twitter">
-                        <FaTwitter />
+                    <a href="#" aria-label="Linkedin">
+                        <FaLinkedin />
                     </a>
 
-                    <a href="#" aria-label="Instagram">
+                    <a href="https://www.instagram.com/vincely_social/" aria-label="Instagram">
                         <FaInstagram />
                     </a>    
                 </div>

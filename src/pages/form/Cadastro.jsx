@@ -19,7 +19,7 @@ function Cadastro() {
             <h2>Cadastrar</h2>
             <p>Já tem uma conta? <a href="/login">Entre agora</a></p>
 
-            <form action="#" method='post'>
+            <form action="/conteudo" method='get'>
               <InputForm 
                 label="Nome Completo"
                 type="text"
