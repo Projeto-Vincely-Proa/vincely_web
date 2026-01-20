@@ -10,8 +10,8 @@ const Testemonial = () => {
         <section className="testemonial" id='testemonial'>
 
             <div className="testemonial-text">
+                <h2>Depoimentos</h2>
                 <span className="testemonial-line"></span>
-                <h2>Avaliações</h2>
                 <p>
                     "Eu estava perdido entre a ansiedade e a tristeza.
                     Esta página me mostrou que existe esperança e que
