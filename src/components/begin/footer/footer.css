@@ -22,23 +22,15 @@
 
 .footer-top a {
   display: flex;
-  align-items: center;
-  justify-content: center;
-
-  min-width: 15rem;
-  width: 80%;
-  max-width: 18rem;
-  height: 4rem;
+  padding: 1rem 3rem;
   background-color: var(--color-surface);
   color: var(--color-text-primary);
-  
-  text-decoration: none;
-  font-size: var(--size-font-btn);
-  font-weight: 600;
-  
-  cursor: pointer;
   border-radius: 15px;
+  font-size: 1.2rem;
+  cursor: pointer;
   border: none;
+  text-decoration: none;
+  font-weight: 700;
 }
 
 .footer-top a .arrow {
