@@ -14,7 +14,7 @@ const About = () => {
 
         <div className="about-line"></div>
         <div className="about-text">
-          <h2>Você está em boas mãos</h2>
+          <h2>Um Espaço para Respirar</h2>
 
           <p>
             Quando a ansiedade parece tomar conta e os pensamentos não param,
@@ -24,7 +24,7 @@ const About = () => {
           </p>
 
           <a href='/cadastro' className='link-btn'>
-            <span>Quero ajuda</span> <IoIosArrowRoundForward className='arrow' />
+            <span>Entrar na Comunidade</span> <IoIosArrowRoundForward className='arrow' />
           </a>
         </div>
 
@@ -36,7 +36,7 @@ const About = () => {
 
         <div className="about-line"></div>
         <div className="about-text">
-          <h2>Você está em boas mãos</h2>
+          <h2>Seguir juntos é mais Leve</h2>
 
           <p>
             A depressão pode fazer parecer que a vida perdeu a cor
@@ -47,7 +47,7 @@ const About = () => {
           </p>
 
           <a href='/cadastro' className='link-btn'>
-            <span>Quero ajuda</span> <IoIosArrowRoundForward className='arrow' />
+            <span>Entrar na Comunidade</span> <IoIosArrowRoundForward className='arrow' />
           </a>
 
         </div>
