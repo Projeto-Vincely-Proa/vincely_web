@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 
 // Hook para anotações em imagens do lightbox
 export default function useAnnotations() {
@@ -6,10 +6,6 @@ export default function useAnnotations() {
   const [annotationsMap, setAnnotationsMap] = useState({});
   const dragRef = useRef(null);
 
-  // Alterna o modo de inserção de texto
-  const toggleTextMode = () => setTextMode(v => !v);
-
-  // Adiciona anotação de texto na imagem ao clicar
   const onLightboxImageClick = (e, item) => {
     if (!textMode) return;
     const img = e.currentTarget.querySelector && e.currentTarget.querySelector('.lightbox-media') ? e.currentTarget.querySelector('.lightbox-media') : document.querySelector('.lightbox-media');
@@ -32,36 +28,50 @@ export default function useAnnotations() {
     window.addEventListener('mouseup', onDragEnd);
   };
 
-  // Move a anotação enquanto arrasta
-  const onDragMove = (e) => {
-    if (!dragRef.current) return;
-    const { annId, startX, startY, itemUrl } = dragRef.current;
-    if (!itemUrl) return;
-    const imgEl = document.querySelector('.lightbox-media');
-    if (!imgEl) return;
-    const rect = imgEl.getBoundingClientRect();
-    const dx = e.clientX - startX;
-    const dy = e.clientY - startY;
-    const prevAnns = annotationsMap[itemUrl] || [];
-    const idx = prevAnns.findIndex(a => a.id === annId);
-    if (idx === -1) return;
-    const ann = prevAnns[idx];
-    const curXpx = (ann.x/100)*rect.width + dx;
-    const curYpx = (ann.y/100)*rect.height + dy;
-    const nx = Math.max(0, Math.min(100, (curXpx/rect.width)*100));
-    const ny = Math.max(0, Math.min(100, (curYpx/rect.height)*100));
-    const copy = [...prevAnns]; copy[idx] = { ...ann, x: nx, y: ny };
-    setAnnotationsMap(prev => ({ ...prev, [itemUrl]: copy }));
-    dragRef.current.startX = e.clientX;
-    dragRef.current.startY = e.clientY;
-  };
+const onDragMove = useCallback((e) => {
+  if (!dragRef.current) return;
 
-  // Finaliza o arrasto da anotação
-  const onDragEnd = () => {
-    dragRef.current = null;
-    window.removeEventListener('mousemove', onDragMove);
-    window.removeEventListener('mouseup', onDragEnd);
-  };
+  const { annId, startX, startY, itemUrl } = dragRef.current;
+  if (!itemUrl) return;
+
+  const imgEl = document.querySelector('.lightbox-media');
+  if (!imgEl) return;
+
+  const rect = imgEl.getBoundingClientRect();
+  const dx = e.clientX - startX;
+  const dy = e.clientY - startY;
+
+  const prevAnns = annotationsMap[itemUrl] || [];
+  const idx = prevAnns.findIndex(a => a.id === annId);
+  if (idx === -1) return;
+
+  const ann = prevAnns[idx];
+
+  const curXpx = (ann.x / 100) * rect.width + dx;
+  const curYpx = (ann.y / 100) * rect.height + dy;
+
+  const nx = Math.max(0, Math.min(100, (curXpx / rect.width) * 100));
+  const ny = Math.max(0, Math.min(100, (curYpx / rect.height) * 100));
+
+  const copy = [...prevAnns];
+  copy[idx] = { ...ann, x: nx, y: ny };
+
+  setAnnotationsMap(prev => ({
+    ...prev,
+    [itemUrl]: copy
+  }));
+
+  dragRef.current.startX = e.clientX;
+  dragRef.current.startY = e.clientY;
+}, [annotationsMap, setAnnotationsMap]);
+
+
+const onDragEnd = useCallback(() => {
+  dragRef.current = null;
+
+  window.removeEventListener("mousemove", onDragMove);
+  window.removeEventListener("mouseup", onDragEnd);
+}, [onDragMove]);
 
   // Edita o texto de uma anotação existente
   const editAnnotation = (itemUrl, ann) => {
