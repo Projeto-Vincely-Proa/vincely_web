@@ -17,8 +17,7 @@ function Sidebar({ isOpen = true, setIsOpen = () => { } }) {
 
   return (
     <aside className={cls} aria-hidden={!isOpen}>
-      {/* close button for mobile */}
-      <button className="btn-close-sidebar" aria-label="Fechar menu" onClick={() => setIsOpen && setIsOpen(false)} />
+      {/* ...existing code... */}
       <nav className="side-nav">
         <img src={Logo} alt="Logo" className="logo" />
 

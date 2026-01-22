@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 
+// Hook para anotações em imagens do lightbox
 export default function useAnnotations() {
   const [textMode, setTextMode] = useState(false);
   const [annotationsMap, setAnnotationsMap] = useState({});
@@ -19,6 +20,7 @@ export default function useAnnotations() {
     setTextMode(false);
   };
 
+  // Inicia o arrasto de uma anotação
   const startDrag = (e, ann, item) => {
     e.stopPropagation();
     dragRef.current = { annId: ann.id, startX: e.clientX, startY: e.clientY, itemUrl: item && item.mediaUrl };
@@ -71,12 +73,14 @@ const onDragEnd = useCallback(() => {
   window.removeEventListener("mouseup", onDragEnd);
 }, [onDragMove]);
 
+  // Edita o texto de uma anotação existente
   const editAnnotation = (itemUrl, ann) => {
     const next = prompt('Editar texto', ann.text);
     if (next === null) return;
     setAnnotationsMap(prev => ({ ...prev, [itemUrl]: (prev[itemUrl]||[]).map(a => a.id === ann.id ? { ...a, text: next } : a) }));
   };
 
+  // Exporta a imagem anotada como PNG
   const exportAnnotatedImage = async (item) => {
     if (!item || item.mediaType !== 'image') return;
     const url = item.mediaUrl;
@@ -110,11 +114,9 @@ const onDragEnd = useCallback(() => {
       window.removeEventListener('mousemove', onDragMove);
       window.removeEventListener('mouseup', onDragEnd);
     };
-  }, []);
+  }, [onDragMove, onDragEnd]);
 
   return {
-    textMode,
-    toggleTextMode,
     annotationsMap,
     onLightboxImageClick,
     startDrag,
