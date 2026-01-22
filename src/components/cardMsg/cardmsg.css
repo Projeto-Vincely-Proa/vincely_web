@@ -1,6 +1,4 @@
-/* =========================
-   WRAPPER DO CARD
-========================= */
+/* ENVOLTÓRIO DO CARD */
 .card-msg-wrapper {
   position: relative;
   width: 100%;
@@ -11,26 +9,24 @@
 }
 
 .card-msg-wrapper.open {
-  z-index: 9999; /* garante menu acima dos outros cards */
+  z-index: 9999; 
 }
 
 .card-msg-wrapper:hover {
   transform: translateX(0.01rem) scale(1.007);
 }
 
-/* =========================
-   CARD PRINCIPAL
-========================= */
+/* CARD PRINCIPAL */
 .card-msg {
   display: flex;
   align-items: center;
   gap: 0.6rem;
   padding: 0.75rem;
   padding-right: 1.5rem;
-  height: 4.25rem; /* todos cards iguais */
+  height: 4.25rem;
   width: 100%;
   border: none;
-  background-color: #fff; /* fundo branco só no card */
+  background-color: #fff; 
   cursor: pointer;
   text-align: left;
   border-radius: 0.5rem;
@@ -43,9 +39,7 @@
   box-shadow: 0 2px 6px rgba(0,0,0,0.04);
 }
 
-/* =========================
-   AVATAR
-========================= */
+/* AVATAR */
 .card-msg-avatar {
   width: 3rem;
   height: 3rem;
@@ -54,9 +48,7 @@
   flex: 0 0 auto;
 }
 
-/* =========================
-   CONTEÚDO
-========================= */
+/* CONTEÚDO  */
 .card-msg-content {
   flex: 1;
   display: flex;
@@ -83,7 +75,7 @@
 }
 
 .unread-badge {
-  background: #E02424; /* vermelho */
+  background: #E02424; 
   color: #fff;
   padding: 0.18rem 0.45rem;
   border-radius: 999px;
@@ -100,9 +92,7 @@
   margin-top: 0.15rem;
 }
 
-/* =========================
-   MENU 3 PONTINHOS
-========================= */
+/* MENU 3 PONTOS */
 .card-msg-menu {
   position: absolute;
   top: 0.5rem;
@@ -119,9 +109,7 @@
   padding: 0.25rem;
 }
 
-/* =========================
-   MENU DROPDOWN
-========================= */
+/* MENU SUSPENSO */
 .menu-options {
   position: absolute;
   right: 0;
@@ -154,9 +142,7 @@
   font-weight: 600;
 }
 
-/* =========================
-   RESPONSIVO
-========================= */
+/* RESPONSIVO */
 @media (max-width: 600px) {
   .card-msg-wrapper {
     max-width: 100%;

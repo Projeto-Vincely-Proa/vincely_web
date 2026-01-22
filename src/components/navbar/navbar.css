@@ -1,11 +1,11 @@
+
 .navbar {
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 1rem 0.5rem 1rem 2rem; /* conforme solicitado: top right bottom left */
+  padding: 1rem 0.5rem 1rem 2rem; /* espaçamento: cima, direita, baixo, esquerda */
 }
 
-/* h1 - título do navbar */
 .navbar-title {
   font-family: 'Lexend', sans-serif;
   font-weight: bold;
@@ -16,16 +16,13 @@
   height: 3rem;
 }
 
-/* div - controles à direita (input, adicionar, notificações) */
 .navbar-content-right {
   display: flex;
   align-items: center;
   margin-left: auto;
   gap: 1rem;
-  
 }
 
-/* input - busca */
 .input-search {
   position: relative;
   width: clamp(180px, 30vw, 420px); 
@@ -62,7 +59,6 @@
   color: var(--color-text-secondary);
 }
 
-/* botões */
 .btn-add,
 .btn-bell {
   width: 3rem;
@@ -77,14 +73,12 @@
   cursor: pointer;
 }
 
-/* botão desabilitado */
 .btn-add[disabled], .btn-add[aria-disabled="true"] {
   opacity: 0.55;
   cursor: not-allowed;
   pointer-events: none;
 }
 
-/* esconder botão add totalmente (sem utilidade agora) */
 .btn-add { display: none; }
 
 .btn-bell { position: relative; }
@@ -106,7 +100,6 @@
   line-height: 1;
 }
 
-/* dropdown de notificações */
 .bell-wrap { position: relative; }
 .notif-dropdown {
   position: absolute;
@@ -129,7 +122,7 @@
 .btn-mark-all { background:transparent; border:1px solid #e6eefc; color:#0f3a83; padding:0.35rem 0.55rem; border-radius:0.45rem; cursor:pointer; font-weight:600; }
 .notif-list { max-height: 18rem; overflow-y: auto; }
 .notif-list {
-  /* scrollbar similar to chats column */
+  /* scrollbar */
   scrollbar-width: thin;
   scrollbar-color: rgba(98,125,152,0.12) transparent;
 }
@@ -149,13 +142,11 @@
 .notif-empty { padding: 1rem; color:#667; }
 .notif-dropdown-footer { padding: 0.75rem 1.25rem; border-top: 1px solid #f0f2f5; display:flex; justify-content:flex-end; }
 
-/* quando aberto */
 .bell-wrap.open .notif-dropdown {
   transform: translateY(0) scale(1);
   opacity: 1;
 }
 
-/* animação de pulso quando chegam novas notificações */
 .btn-bell.pulse { animation: bellPulse 700ms ease-out; }
 @keyframes bellPulse {
   0% { transform: scale(1); }
@@ -163,18 +154,7 @@
   100% { transform: scale(1); }
 }
 
-/* responsivo */
-@media (max-width: 1000px) {
-  .navbar-title {
-    font-size: 1.1rem;
-  }
-
-  .input-search {
-    width: 14rem;
-  }
-}
-
-/* hamburger button for mobile */
+/* botão hamburger para mobile */
 @media (max-width: 700px) {
   .btn-hamburger {
     display: inline-flex;
@@ -194,5 +174,17 @@
     background: var(--color-text-primary);
     margin: 3px 0;
     border-radius: 2px;
+  }
+}
+
+
+/* responsividade */
+@media (max-width: 1000px) {
+  .navbar-title {
+    font-size: 1.1rem;
+  }
+
+  .input-search {
+    width: 14rem;
   }
 }

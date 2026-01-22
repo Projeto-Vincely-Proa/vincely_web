@@ -2,25 +2,24 @@
 .main-content {
   margin-left: 15.62rem;
   min-height: 100vh;
-  padding-right: 0.5rem; /* espaço do conteúdo à borda direita reduzido */
-  overflow: auto; /* permitir scroll caso a página tenha muito conteúdo */
+  padding-right: 0.5rem; 
+  overflow: auto; 
 }
 
 /* .main-inner: wrapper interno centralizado do conteúdo da página */
 .main-inner {
-  /* Remover layout flex para não limitar largura do conteúdo (ex: chat) */
   display: block;
-  /* margem direita reduzida para 1rem (16px) conforme espaçamento desejado */
+
   margin: 0 1rem 0 0;
   width: auto;
-  padding: 0.5rem 0; /* espaçamento interno reduzido para evitar sensação de 'sidebar direita' */
+  padding: 0.5rem 0; 
 }
 
 /* notificação flutuante global (canto inferior direito) */
 .global-floating-notif {
   position: fixed;
   right: 1rem;
-  top: 4.25rem; /* aparecer logo abaixo da navbar */
+  top: 4.25rem;
   display: flex;
   cursor: pointer;
   gap: 0.75rem;
