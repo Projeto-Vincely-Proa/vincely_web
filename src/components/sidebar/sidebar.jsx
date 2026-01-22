@@ -9,9 +9,10 @@ function Sidebar() {
   return (
     <aside className="side-bar">
       <nav className="side-nav">
-        <img src={Logo} alt="Logo" className="logo" />
+        <a href="/conteudo">
+          <img src={Logo} alt="Vincely" className="logo" />
+        </a>
 
-        {/* MENU CENTRALIZADO */}
         <div className="menu-wrapper">
           <ul className="side-nav-list">
             <li className="side-nav-item">
@@ -64,7 +65,9 @@ function Sidebar() {
       {/* PERFIL FIXO EMBAIXO */}
       <div className="container_profile">
         <div className="profile-user">
-          <img src={UserProfile} alt="Foto do usuário" className="profile-pic" />
+          <a href="/perfil">
+            <img src={UserProfile} alt="Foto do usuário" className="profile-pic" />
+          </a>
         </div>
 
         <div className="profile-card">
