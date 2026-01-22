@@ -32,20 +32,7 @@ const MAX_FIXADOS = 5;
 
 function Mensagens() {
   const { setPageTitle } = useContext(PageTitleContext);
-  const {
-    setUnreadCount,
-    setNotifications,
-    pendingOpenUserId,
-    setPendingOpenUserId,
-    pushNotification,
-    messagesBuffer,
-    setMessagesBuffer,
-    clearAll,
-    setClearAll
-  } = useContext(NotificationContext);
 
-  const location = useLocation();
-  const navigate = useNavigate();
 
   const [chatUsers, setChatUsers] = useState(users);
   const [archivedUsers, setArchivedUsers] = useState([]);
@@ -160,7 +147,7 @@ function Mensagens() {
         ]
       };
     });
-  }, [setNotifications]);
+  }, [setNotifications, selectedUser?.id]);
 
   /*  Enviar texto  */
   const sendMessage = useCallback(() => {
@@ -246,11 +233,11 @@ function Mensagens() {
   // Funções estáveis para navegação do lightbox
   const nextLightbox = useCallback(() => {
     setLightboxIndex(i => (i + 1) % (lightboxItems.length || 1));
-  }, []);
+  }, [lightboxItems.length]);
 
   const prevLightbox = useCallback(() => {
     setLightboxIndex(i => (i - 1 + (lightboxItems.length || 1)) % (lightboxItems.length || 1));
-  }, []);
+  }, [lightboxItems.length]);
 
   useEffect(() => {
     if (!lightboxOpen) return;
@@ -261,7 +248,7 @@ function Mensagens() {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [lightboxOpen]);
+  }, [lightboxOpen, nextLightbox, prevLightbox]);
 
   /*  Render  */
   const fixados = chatUsers.filter(u => u.fixed);
