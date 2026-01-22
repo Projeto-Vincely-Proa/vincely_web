@@ -1,17 +1,20 @@
 // Conteudo.js
-import React from "react";
-import Navbar from "../../components/navbar/navbar";
-import Sidebar from "../../components/sidebar/sidebar";
+import React, { useContext, useEffect } from "react";
  import Feed from  "../../components/feed/feed.jsx"
 import StatsPanel from "../../components/staticMembers/staticMembers.jsx";
 import "../Conteudo/conteudo.css";
+import { PageTitleContext } from '../../contexts/PageTitleContext';
 
 function Conteudo() {
+  const { setPageTitle } = useContext(PageTitleContext);
+
+  useEffect(() => {
+    setPageTitle('Minhas Comunidades');
+    return () => setPageTitle('Vincely');
+  }, [setPageTitle]);
   return (
     <>
-      <Sidebar />
       <div className="content-area">
-        <Navbar />
         <main className="layout">
           <Feed />
           <StatsPanel />

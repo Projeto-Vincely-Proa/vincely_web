@@ -1,0 +1,153 @@
+/* ENVOLTÓRIO DO CARD */
+.card-msg-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 22.5rem;
+  margin: 0;
+  transition: transform 150ms ease;
+  transform-origin: left center;
+}
+
+.card-msg-wrapper.open {
+  z-index: 9999; 
+}
+
+.card-msg-wrapper:hover {
+  transform: translateX(0.01rem) scale(1.007);
+}
+
+/* CARD PRINCIPAL */
+.card-msg {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem;
+  padding-right: 1.5rem;
+  height: 4.25rem;
+  width: 100%;
+  border: none;
+  background-color: #fff; 
+  cursor: pointer;
+  text-align: left;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  overflow: visible;
+  transition: box-shadow 150ms ease, transform 150ms ease;
+}
+
+.card-msg-wrapper:hover .card-msg {
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+/* AVATAR */
+.card-msg-avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  object-fit: cover;
+  flex: 0 0 auto;
+}
+
+/* CONTEÚDO  */
+.card-msg-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card-msg-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 2rem;
+  margin-bottom: 0.2rem;
+}
+
+.card-msg-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.card-msg-time {
+  font-size: 0.75rem;
+  color: #777;
+}
+
+.unread-badge {
+  background: #E02424; 
+  color: #fff;
+  padding: 0.18rem 0.45rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.card-msg-last {
+  font-size: 0.85rem;
+  color: #555;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 0.15rem;
+}
+
+/* MENU 3 PONTOS */
+.card-msg-menu {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.card-msg-menu button {
+  border: none;
+  background: transparent;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+/* MENU SUSPENSO */
+.menu-options {
+  position: absolute;
+  right: 0;
+  top: 110%;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  padding: 0.25rem 0;
+  z-index: 10001;
+  min-width: 8rem;
+}
+
+.menu-options button {
+  background: transparent;
+  border: none;
+  padding: 0.5rem 1rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.menu-options button:hover {
+  background-color: rgba(0,0,0,0.05);
+}
+
+.menu-options button.danger {
+  color: #d33;
+  font-weight: 600;
+}
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+  .card-msg-wrapper {
+    max-width: 100%;
+  }
+  .card-msg {
+    height: 5rem;
+  }
+}

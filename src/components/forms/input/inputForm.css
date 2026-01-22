@@ -8,7 +8,8 @@ label {
     font-weight: 600;
 }
 
-input {
+/* limitar esta estilização apenas aos inputs dentro do componente de formulário */
+.input-form input {
     margin-bottom: 2rem;
     padding: .75rem .875rem;
     border-radius: .5rem;

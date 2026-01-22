@@ -13,41 +13,46 @@ const Navbar = () => {
   }
 
   return (
-    <header className="navbar-container" id='navbar'>
-      <div className="nav-logo-container">
-        <h1>
-          <img src={Logo} alt="Vincely" />
-        </h1>
-      </div>
 
-      <nav className='navbar-links-container' ref={navRef}>
-        <ul>
-          <li>
-            <a href="#home">Home</a>
-          </li>
-          <li>
-            <a href="#about">Sobre</a>
-          </li>
-          <li>
-            <a href="#testemonial">Depoimentos</a>
-          </li>
-        </ul>
-        <button className='nav-btn close-nav-btn' onClick={showNavbar}>
-          <IoIosClose />
-        </button>
-      </nav>
-      <div className='navigation-btns'>
-        <a href="/cadastro" className="primary-button">
-          Cadastro <span className="arrow">→</span>
-        </a>
-        
-        <button className='nav-btn' onClick={showNavbar}>
-          <IoIosMenu />
-        </button>
-      </div>
+    <>
 
-    </header>
+      <header className="navbar-container" id='navbar'>
+
+        <div className="nav-logo-container">
+          <h1>
+            <img src={Logo} alt="Vincely" />
+          </h1>
+        </div>
+
+        <nav className='navbar-links-container' ref={navRef}>
+          <ul>
+            <li>
+              <a href="#home">Home</a>
+            </li>
+            <li>
+              <a href="#about">Sobre</a>
+            </li>
+            <li>
+              <a href="#testemonial">Depoimentos</a>
+            </li>
+          </ul>
+          <button className='nav-btn close-nav-btn' onClick={showNavbar}>
+            <IoIosClose />
+          </button>
+        </nav>
+        <div className='navigation-btns'>
+          <a href="/cadastro" className="primary-button">
+            Cadastro <span className="arrow">→</span>
+          </a>
+
+          <button className='nav-btn' onClick={showNavbar}>
+            <IoIosMenu />
+          </button>
+        </div>
+
+      </header>
+    </>
   )
 }
 
-export default Navbar
+export default Navbar;

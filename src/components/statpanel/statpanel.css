@@ -25,7 +25,7 @@
 .est-total-members {
     font-size: 1.12rem;
     font-weight: 600;
-    color: var(--color-text-dark, #333);
+    color: var(--color-text-dark);
 }
 
 /* Container de membros */

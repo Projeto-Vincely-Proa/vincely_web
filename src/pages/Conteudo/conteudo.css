@@ -1,23 +1,32 @@
+/* reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* base/background */
 body {
   background-color: var(--color-background);
 }
 
-/* Área geral do conteúdo  */
+/* content-area */
 .content-area {
-  margin-left: 15.62rem;
+  margin-left: 0;
   min-height: 100vh;
 }
 
-/* Layout interno: Feed + Stats */
+/* layout (feed + stats) */
 .layout {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   gap: 2rem;
+}
+
+/* responsive */
+@media (max-width: 62.5rem) {
+  .stats-panel {
+    display: none;
+  }
 }
