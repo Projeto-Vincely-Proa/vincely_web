@@ -4,7 +4,7 @@ import imgBanner from '../../img/user_banner.png';
 import SideBar from '../../components/sidebar/sidebar';
 
 const Perfil = () => {
-    const perfil = JSON.parse(localStorage.getItem('perfilUsuario'));
+    let perfil = JSON.parse(localStorage.getItem('perfilUsuario'));
 
     if (!perfil) {
         perfil = {
