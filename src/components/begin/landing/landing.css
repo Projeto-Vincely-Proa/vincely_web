@@ -1,55 +1,87 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-
-.landing-section-containe {
+.landing {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to right, #60AC8D, #1C4532FA 98.22%);
-    width: 100vw;
-    height: 100vh;
+    background-color: var(--color-secondary);
 }
 
-.landing-text-section-containe {
-    text-align: center;
-}
-
-.landing-text-section-containe button {
-    padding: 1.5rem 3rem;
-    margin: 2rem auto 0 auto;
-    background-color: #DFFFF0;
-    color: #050505;
-    font-size: 1rem;
-    font-weight: 500;
-    display: flex;
-    border: none;
-    gap: 1rem;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-.third-heading {
-    font-size: 2.8rem;
-    font-weight: 600;
-    color: #ffffff;
-    margin-bottom: 1.5rem;
+.landing .container {
+    width: 100%;
 }
 
 .landing-line {
-    width: 35%;
+    width: 50%;
     height: 0.25rem;
-    background: linear-gradient(to right, #FFAC12 30%, rgba(0,0,0,0.1));
+    background: var(--color-linear);
     border-radius: 2px;
     margin: 0 auto 1rem auto;
 }
 
-.third-text {
-    font-size: 1.30rem;
-    margin-bottom: 5px;
-    color: #bbb1b1;
-    line-height: 1.5;
-    max-width: 26.75rem;
+.landing h2 {
+    font-size: var(--size-title-3);
+    color: var(--color-text-opacity-2);
+    margin-bottom: 2rem;
     text-align: center;
+}
+
+.landing-cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.landing-cards .card {
+    background-color: var(--color-surface);
+    border-radius: 20px;
+    padding: 2rem;
+    max-width: 20rem;
+    height: 20rem;
+    color: var(--color-text-dark);
+    transition: transform 0.3s ease;
+}
+
+.landing-cards .card:hover {
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+    transform: scale(1.05);
+}
+
+.landing .container .link-btn {
+    width: 90%;
+    max-width: 23.125rem;
+    height: 4rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--color-text-primary);
+    font-size: var(--size-font-btn);
+    background-color: var(--color-surface);
+
+    gap: 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+    margin-top: 2.5rem;
+}
+
+.landing .link-btn .arrow {
+    font-weight: 800;
+    font-size: 2rem;
+}
+
+.landing .link-btn:hover .arrow {
+    transform: translateX(5px);
+    transition: 0.6s;
+}
+
+@media (min-width: 1000px) {
+    .landing {
+        background: var(--color-background-linear);
+    }
 }

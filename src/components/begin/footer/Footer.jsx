@@ -1,81 +1,57 @@
 import './footer.css';
-import logo from "../../../assets/Logo1.png";
-import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
+import logo from "../../../assets/Logo1.png";
+
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { IoIosArrowRoundForward } from "react-icons/io";
 
 
 const Footer = () => {
     return (
-        <>
-            <footer className="footer">
-                <div className="footer-container">
+        <footer className="footer">
 
-                    <div className="footer-top">
-                        <h2>Seu bem-estar importa.</h2>
+            <div className="footer-top">
+                <h2>Seu bem-estar importa.</h2>
 
-                        <a href="#cadastro" className="primary-button">
-                            Cadastro<span className="arrow">→</span>
-                        </a>
-                    </div>
-                    <div className="footer-bottom">
+                <a href="/cadastro">
+                    <span>Cadastro</span> <IoIosArrowRoundForward className='arrow' />
+                </a>
+            </div>
+            <div className="footer-bottom">
 
-                        <div className="footer-brand">
-                            <img src={logo} alt="logo Vincely" className="footer-logo" />
+                <a href="#navbar">
+                    <img src={logo} alt="logo Vincely" className="footer-logo" />
+                </a>
 
-                            <div className="socials">
-                                <a href="#" aria-label="Facebook">
-                                    <FaFacebookF />
-                                </a>
-                                <a href="#" aria-label="Twitter">
-                                    <FaTwitter />
-                                </a>
+                <div className="socials">
+                    <a 
+                    href="https://github.com/Projeto-Vincely-Proa" 
+                    target='_blank' 
+                    rel="noopener noreferrer" 
+                    aria-label="Github"
+                    >
+                        <FaGithub />
+                    </a>
+                    <a 
+                    href="https://www.linkedin.com/in/vincely-social-1275903a4/" 
+                    target='_blank' 
+                    rel="noopener noreferrer" 
+                    aria-label="Linkedin"
+                    >
+                        <FaLinkedin />
+                    </a>
 
-                                <a href="#" aria-label="Instagram">
-                                    <FaInstagram />
-                                </a>
-                            </div>
-                        </div>
-
-
-                        <div className="footer-column">
-                            <h4>Cabeçalho d coluna</h4>
-                            <a href="#">O link vai aqui</a>
-                            <a href="#">O link vai aqui</a>
-                            <a href="#">O link vai aqui</a>
-                            <a href="#">O link vai aqui</a>
-                        </div>
-
-                        <div className="footer-column">
-                            <h4>Cabeçalho d coluna</h4>
-                            <a href="#">O link vai aqui</a>
-                            <a href="#">O link vai aqui</a>
-                            <a href="#">O link vai aqui</a>
-                            <a href="#">O link vai aqui</a>
-                        </div>
-
-                        <div className="footer-column">
-                            <h4>Cabeçalho d coluna</h4>
-                            <a href="#">O link vai aqui</a>
-                            <a href="#">O link vai aqui</a>
-                            <a href="#">O link vai aqui</a>
-                            <a href="#">O link vai aqui</a>
-                        </div>
-
-
-
-                    </div>
+                    <a 
+                    href="https://www.instagram.com/vincely_social/" 
+                    target='_blank' 
+                    rel="noopener noreferrer" 
+                    aria-label="Instagram"
+                    >
+                        <FaInstagram />
+                    </a>
                 </div>
-
-
-
-
-
-            </footer>
-
-
-
-
-        </>
+            </div>
+        </footer>
 
 
 

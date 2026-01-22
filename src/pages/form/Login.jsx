@@ -1,6 +1,6 @@
 import './form.css';
 
-import Logo from '../../assets/img/logo/logo.png';
+import Logo from '../../assets/Logo.png';
 import SideForm from '../../components/forms/SideForm';
 import InputForm from '../../components/forms/input/InputForm';
 
@@ -14,25 +14,24 @@ function Login() {
 
       <main className='container-layout'>
         <div>
-          <header>
-            <h1><img src={Logo} alt="Imagem da logo do projeto" /></h1>
+          <header className='header-form'>
+            <h1><img src={Logo} alt="Vincely" /></h1>
           </header>
 
           <section className='container-form'>
             <h2>Login</h2>
-            <p>Não tem uma conta? <a href="/cadastro">Crie uma agora</a></p>
 
-            <form action="#" method='post'>
-              <InputForm 
+            <form action="/conteudo" method='get'>
+              <InputForm
                 label="E-mail"
                 type="email"
                 name="email"
                 id="email"
                 placeholder="exemplo@gmail.com"
-                
+
               />
 
-              <InputForm 
+              <InputForm
                 label="Senha"
                 type="password"
                 name="pwd"
@@ -46,25 +45,33 @@ function Login() {
                   <label htmlFor="remember">Lembrar-me</label>
                 </div>
 
-                <a href="#">Esqueceu sua senha?</a>
+                <a href="/login">Esqueceu sua senha?</a>
               </div>
 
               <input type="submit" value="Entrar" />
             </form>
 
+            <p className='another-form'>Não tem uma conta? <a href="/cadastro">Crie uma agora</a></p>
+
+
             <div className="divider">
+
               <span>OU</span>
             </div>
 
             <div className="btn-icons">
               <button>
                 <FcGoogle className='icons' />
-                Continue com Google
+                <span className='btn-icons__text'>
+                  Continue com Google
+                </span>
               </button>
 
               <button>
-                <FaFacebook className='icons'/>
-                Continue com Facebook
+                <FaFacebook className='icons' />
+                <span className='btn-icons__text'>
+                  Continue com Facebook
+                </span>
               </button>
             </div>
           </section>
