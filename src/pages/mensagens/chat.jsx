@@ -52,7 +52,7 @@ function Mensagens() {
   
   // utilitário de formatação de tempo
   const { setUnreadCount } = useContext(NotificationContext);
-  const { notifications, setNotifications, pendingOpenUserId, setPendingOpenUserId, pushNotification } = useContext(NotificationContext);
+  const { setNotifications, pendingOpenUserId, setPendingOpenUserId, pushNotification } = useContext(NotificationContext);
   const { messagesBuffer, setMessagesBuffer } = useContext(NotificationContext);
   const { clearAll, setClearAll } = useContext(NotificationContext);
   const location = useLocation();
@@ -77,7 +77,7 @@ function Mensagens() {
       return;
     }
     setChatUsers(prev => prev.map(u => u.id === user.id ? { ...u, fixed: !u.fixed } : u));
-  }, [chatUsers, fixedUsers]);
+  }, [fixedUsers]);
 
   const handleArchive = useCallback((user) => {
     setChatUsers(prev => prev.filter(u => u.id !== user.id));
@@ -144,7 +144,7 @@ function Mensagens() {
         URL.revokeObjectURL(pendingMedia.url);
       }
     };
-  }, []);
+  }, [pendingMedia]);
 
   const togglePlay = useCallback((m) => {
     const el = document.getElementById(`audio-${m.id}`);
@@ -209,7 +209,7 @@ function Mensagens() {
       };
       window.addEventListener('keydown', onKey);
       return () => window.removeEventListener('keydown', onKey);
-    }, [lightboxOpen, lightboxItems.length]);
+    }, [lightboxOpen, lightboxItems.length, nextLightbox, prevLightbox]);
 
     // lock body scroll when lightbox is open
     useEffect(() => {
