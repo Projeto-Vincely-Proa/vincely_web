@@ -13,6 +13,17 @@
     --color-text-opacity: #76767A;
 
     --color-button-logout: #071A41B0;
+
+    /* Chat / composer / audio variables (centralized) */
+    --chat-play: #0f3a83;
+    --chat-progress-fill: #2EA44F;
+    --chat-composer-bg: #F7FAFC;
+    --chat-send: #0f3a83;
+    --chat-delete: #D23A3A;
+    --chat-duration: #10304b;
+    --audio-fill-mine: rgba(16,48,75,0.9);
+    --audio-fill-their: rgba(255,255,255,0.95);
+    --audio-progress-bg: rgba(255,255,255,0.12);
 }
 
 * {

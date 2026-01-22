@@ -1,0 +1,48 @@
+/* .main-content: container principal ao lado da sidebar fixa */
+.main-content {
+  margin-left: 15.62rem;
+  min-height: 100vh;
+  padding-right: 0.5rem; /* espaço do conteúdo à borda direita reduzido */
+  overflow: auto; /* permitir scroll caso a página tenha muito conteúdo */
+}
+
+/* .main-inner: wrapper interno centralizado do conteúdo da página */
+.main-inner {
+  /* Remover layout flex para não limitar largura do conteúdo (ex: chat) */
+  display: block;
+  /* margem direita reduzida para 1rem (16px) conforme espaçamento desejado */
+  margin: 0 1rem 0 0;
+  width: auto;
+  padding: 0.5rem 0; /* espaçamento interno reduzido para evitar sensação de 'sidebar direita' */
+}
+
+/* notificação flutuante global (canto inferior direito) */
+.global-floating-notif {
+  position: fixed;
+  right: 1rem;
+  top: 4.25rem; /* aparecer logo abaixo da navbar */
+  display: flex;
+  cursor: pointer;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: #0f3a83;
+  color: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 20px rgba(6,30,63,0.25);
+  z-index: 1200;
+  min-width: 14rem;
+  max-width: 22rem;
+  animation: slideup 260ms ease-out;
+}
+.global-floating-notif img { width: 28px; height: 28px; border-radius:50%; object-fit:cover; }
+.global-floating-body { display:flex; flex-direction:column; gap:0.25rem; }
+.global-floating-body strong { font-size: 0.95rem; line-height:1; }
+.global-floating-text { font-size: 0.85rem; opacity: 0.95; color: rgba(255,255,255,0.95); }
+
+@media (max-width: 700px) {
+  .global-floating-notif { display: none; }
+}
+ 
+
+

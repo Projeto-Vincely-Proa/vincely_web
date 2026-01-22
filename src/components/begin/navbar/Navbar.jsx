@@ -5,7 +5,7 @@ import './navbar.css';
 
 const Navbar = () => {
   return (
-    <nav>
+    <nav className="begin-navbar">
       <div className="nav-logo-container">
         <h1>
           <img src={Logo} alt="logo vincely" />
