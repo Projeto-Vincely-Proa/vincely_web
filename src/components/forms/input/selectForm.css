@@ -1,0 +1,39 @@
+.form-control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-family: 'Poppins';
+}
+
+/* SELECT */
+.form-control select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid var(--color-text-opacity);
+  margin-bottom: 1rem;
+
+  font-size: 0.9rem;
+
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+
+  cursor: pointer;
+}
+
+/* FOCUS */
+.form-control select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  background-color: var(--color-surface);
+}
+
+/* DISABLED */
+.form-control select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
