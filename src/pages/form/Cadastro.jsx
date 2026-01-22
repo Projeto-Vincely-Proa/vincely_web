@@ -17,8 +17,6 @@ function Cadastro() {
 
           <section className='container-form'>
             <h2>Cadastrar</h2>
-
-
             <form action="/conteudo" method='get'>
               <InputForm
                 label="Nome Completo"
@@ -50,6 +48,14 @@ function Cadastro() {
                 name="pwd"
                 id="pwd"
                 placeholder="@#*%"
+              />
+
+              <InputForm 
+                label="Data de Nascimento"
+                type="data"
+                name='data-nascimento'
+                id='data-nascimento'
+                placeholder='09/07/2003'
               />
 
               <input type="submit" value="Entrar" />
