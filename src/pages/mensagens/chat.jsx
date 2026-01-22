@@ -48,7 +48,7 @@ function Mensagens() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [lightboxItems, setLightboxItems] = useState([]);
-  const touchStartXRef = React.useRef(null);
+
   
   // utilitário de formatação de tempo
   const { setUnreadCount } = useContext(NotificationContext);
