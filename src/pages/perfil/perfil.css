@@ -94,7 +94,6 @@
 /* ===== AÇÕES ===== */
 .perfil-acoes {
   margin-top: 2rem;
-  border: 1px solid red;
   display: flex;
   justify-content: end;
 }
