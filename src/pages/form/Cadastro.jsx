@@ -50,6 +50,14 @@ function Cadastro() {
                 placeholder="@#*%"
               />
 
+              <InputForm 
+                label="Data de Nascimento"
+                type="data"
+                name='data-nascimento'
+                id='data-nascimento'
+                placeholder='09/07/2003'
+              />
+
               <input type="submit" value="Entrar" />
             </form>
 
