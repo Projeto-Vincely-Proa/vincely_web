@@ -90,6 +90,8 @@ function Mensagens() {
     editAnnotation
   } = useAnnotations();
 
+  const { setUnreadCount, setNotifications } = useContext(NotificationContext);
+
   /*  Page title  */
   useEffect(() => {
     setPageTitle("Mensagens");
