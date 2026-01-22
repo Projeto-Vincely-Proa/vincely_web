@@ -23,7 +23,7 @@ export default function Lightbox({ open, items = [], index = 0, onClose, annotat
             <div className="lightbox-media-container">
               <img className="lightbox-media" src={item.mediaUrl} alt={item.mediaName || 'mídia'} />
               {/* render annotations for this item */}
-              {(annotationsMap && annotationsMap[item.mediaUrl] || []).map(ann => (
+              {((annotationsMap && annotationsMap[item.mediaUrl]) || []).map(ann => (
                 <div
                   key={ann.id}
                   className="lightbox-annotation"

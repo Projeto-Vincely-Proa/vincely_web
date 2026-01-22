@@ -14,14 +14,15 @@ function Navbar({ sidebarOpen, setSidebarOpen }) {
     const [pulse, setPulse] = useState(false);
     const navigate = useNavigate();
     const containerRef = useRef(null);
+    const hasNotifications = notifications?.length > 0;
 
     useEffect(() => {
-        if (!notifications) return;
+        if (!hasNotifications) return;
         // animação breve quando chega nova notificação
         setPulse(true);
         const t = setTimeout(() => setPulse(false), 700);
         return () => clearTimeout(t);
-    }, [notifications && notifications.length]);
+    }, [hasNotifications]);
 
     return (
         <nav className="navbar">
