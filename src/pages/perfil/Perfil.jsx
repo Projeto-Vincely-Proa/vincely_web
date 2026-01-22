@@ -7,7 +7,15 @@ const Perfil = () => {
     const perfil = JSON.parse(localStorage.getItem('perfilUsuario'));
 
     if (!perfil) {
-        return <p>Perfil não encontrado</p>;
+        perfil = {
+            username: 'Alice Caroline',
+            email: 'alice.caroline@gmail.com',
+            phone: '11987654321',
+            genero: 'Feminino',
+            pronome: 'Ela/Dela',
+            descricao: ''
+        };
+
     }
 
     return (
