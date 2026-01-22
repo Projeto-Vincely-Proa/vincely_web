@@ -1,12 +1,15 @@
 import { useState, useRef, useEffect } from 'react';
 
+// Hook para anotações em imagens do lightbox
 export default function useAnnotations() {
   const [textMode, setTextMode] = useState(false);
   const [annotationsMap, setAnnotationsMap] = useState({});
   const dragRef = useRef(null);
 
+  // Alterna o modo de inserção de texto
   const toggleTextMode = () => setTextMode(v => !v);
 
+  // Adiciona anotação de texto na imagem ao clicar
   const onLightboxImageClick = (e, item) => {
     if (!textMode) return;
     const img = e.currentTarget.querySelector && e.currentTarget.querySelector('.lightbox-media') ? e.currentTarget.querySelector('.lightbox-media') : document.querySelector('.lightbox-media');
@@ -21,6 +24,7 @@ export default function useAnnotations() {
     setTextMode(false);
   };
 
+  // Inicia o arrasto de uma anotação
   const startDrag = (e, ann, item) => {
     e.stopPropagation();
     dragRef.current = { annId: ann.id, startX: e.clientX, startY: e.clientY, itemUrl: item && item.mediaUrl };
@@ -28,6 +32,7 @@ export default function useAnnotations() {
     window.addEventListener('mouseup', onDragEnd);
   };
 
+  // Move a anotação enquanto arrasta
   const onDragMove = (e) => {
     if (!dragRef.current) return;
     const { annId, startX, startY, itemUrl } = dragRef.current;
@@ -51,18 +56,21 @@ export default function useAnnotations() {
     dragRef.current.startY = e.clientY;
   };
 
+  // Finaliza o arrasto da anotação
   const onDragEnd = () => {
     dragRef.current = null;
     window.removeEventListener('mousemove', onDragMove);
     window.removeEventListener('mouseup', onDragEnd);
   };
 
+  // Edita o texto de uma anotação existente
   const editAnnotation = (itemUrl, ann) => {
     const next = prompt('Editar texto', ann.text);
     if (next === null) return;
     setAnnotationsMap(prev => ({ ...prev, [itemUrl]: (prev[itemUrl]||[]).map(a => a.id === ann.id ? { ...a, text: next } : a) }));
   };
 
+  // Exporta a imagem anotada como PNG
   const exportAnnotatedImage = async (item) => {
     if (!item || item.mediaType !== 'image') return;
     const url = item.mediaUrl;
@@ -96,11 +104,9 @@ export default function useAnnotations() {
       window.removeEventListener('mousemove', onDragMove);
       window.removeEventListener('mouseup', onDragEnd);
     };
-  }, []);
+  }, [onDragMove, onDragEnd]);
 
   return {
-    textMode,
-    toggleTextMode,
     annotationsMap,
     onLightboxImageClick,
     startDrag,

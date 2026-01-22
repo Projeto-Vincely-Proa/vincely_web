@@ -1,24 +1,20 @@
 import React, { useState, useRef, useEffect } from 'react';
 import iconMic from '../../icons/Plus.svg';
 
+// Componente para gravar e enviar áudio
 export default function AudioRecorder({ onSend }) {
   const [isRecording, setIsRecording] = useState(false);
   const mediaRecorderRef = useRef(null);
   const mediaStreamRef = useRef(null);
-  const [recordingSeconds, setRecordingSeconds] = useState(0);
+  
   const recordingIntervalRef = useRef(null);
   const recordingStartRef = useRef(null);
-  const [pendingAudio, setPendingAudio] = useState(null); // { blob, url, duration, secs, time }
+  const [pendingAudio, setPendingAudio] = useState(null); 
   const [pendingPlaying, setPendingPlaying] = useState(false);
 
-  const formatTime = (secs) => {
-    if (secs === undefined || secs === null) return '0:00';
-    const s = Math.max(0, Math.floor(secs));
-    const mm = Math.floor(s / 60);
-    const ss = s % 60;
-    return `${mm}:${String(ss).padStart(2, '0')}`;
-  };
 
+
+  // Inicia a gravação de áudio
   const startRecording = async () => {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
@@ -47,15 +43,14 @@ export default function AudioRecorder({ onSend }) {
       mediaRecorderRef.current = mr;
       mr.start();
       recordingStartRef.current = Date.now();
-      recordingIntervalRef.current = setInterval(() => {
-        setRecordingSeconds(Math.floor((Date.now() - recordingStartRef.current) / 1000));
-      }, 500);
+      // Intervalo removido pois setRecordingSeconds não existe mais
       setIsRecording(true);
     } catch (err) {
       console.error('Erro ao iniciar microfone', err);
     }
   };
 
+  // Para a gravação de áudio
   const stopRecording = () => {
     if (mediaRecorderRef.current && mediaRecorderRef.current.state !== 'inactive') {
       mediaRecorderRef.current.stop();
@@ -67,6 +62,7 @@ export default function AudioRecorder({ onSend }) {
     }
   };
 
+  // Limpeza de recursos ao desmontar
   useEffect(() => {
     return () => {
       if (mediaRecorderRef.current && mediaRecorderRef.current.state !== 'inactive') {
@@ -78,13 +74,15 @@ export default function AudioRecorder({ onSend }) {
       }
       if (pendingAudio && pendingAudio.url) URL.revokeObjectURL(pendingAudio.url);
     };
-  }, []);
+  }, [pendingAudio]);
 
+  // Alterna entre iniciar e parar gravação
   const toggleRecord = () => {
     if (!isRecording) return startRecording();
     stopRecording();
   };
 
+  // Alterna entre play/pause do áudio gravado
   const togglePlay = () => {
     if (!pendingAudio) return;
     const el = document.getElementById('audio-recorder-preview');
@@ -95,12 +93,14 @@ export default function AudioRecorder({ onSend }) {
     setPendingPlaying(true);
   };
 
+  // Descarta o áudio gravado
   const discard = () => {
     if (pendingAudio && pendingAudio.url) URL.revokeObjectURL(pendingAudio.url);
     setPendingAudio(null);
     setPendingPlaying(false);
   };
 
+  // Envia o áudio gravado
   const doSend = () => {
     if (!pendingAudio) return;
     if (onSend) onSend(pendingAudio);

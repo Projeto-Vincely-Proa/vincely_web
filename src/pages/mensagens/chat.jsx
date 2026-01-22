@@ -4,7 +4,7 @@ import "./chat.css";
 import { PageTitleContext } from "../../contexts/PageTitleContext";
 import { NotificationContext } from "../../contexts/NotificationContext";
 import CardMsg from "../../components/cardMsg/cardmsg";
-import MessageBubble from "../../components/chat/MessageBubble";
+// ...existing code...
 import Composer from "../../components/chat/Composer";
 import ChatHeader from "../../components/chat/ChatHeader";
 import ConfirmModal from "../../components/confirmModal/ConfirmModal";
@@ -32,7 +32,9 @@ function Mensagens() {
   const [composerText, setComposerText] = useState("");
   const [playingId, setPlayingId] = useState(null);
   const [audioProgress, setAudioProgress] = useState({});
-  // media handlers moved to hook
+
+
+  // manipulação de mídia
   const handleSendPendingMedia = useCallback((pending) => {
     if (!pending || !selectedUser) return;
     setMessagesMap(prev => {
@@ -48,7 +50,7 @@ function Mensagens() {
   const [lightboxItems, setLightboxItems] = useState([]);
   const touchStartXRef = React.useRef(null);
   
-  // formatTime moved to utils/chatUtils
+  // utilitário de formatação de tempo
   const { setUnreadCount } = useContext(NotificationContext);
   const { notifications, setNotifications, pendingOpenUserId, setPendingOpenUserId, pushNotification } = useContext(NotificationContext);
   const { messagesBuffer, setMessagesBuffer } = useContext(NotificationContext);
@@ -61,7 +63,7 @@ function Mensagens() {
     return () => setPageTitle("Vincely");
   }, [setPageTitle]);
 
-  // manter contagem total de unread no contexto
+  // contagem de não lidas
   useEffect(() => {
     const total = [...chatUsers, ...archivedUsers].reduce((acc, u) => acc + (u.unread || 0), 0);
     setUnreadCount && setUnreadCount(total);
@@ -98,18 +100,19 @@ function Mensagens() {
   }, [confirmUser]);
 
   const openConversation = useCallback((user) => {
-    // Toggle: se já estiver selecionado, fecha a conversa
+    // toggle seleção de conversa
     if (selectedUser && selectedUser.id === user.id) {
       setSelectedUser(null);
       return;
     }
-    // abrir conversa (permitir para todos os usuários)
+    // abrir conversa
     setSelectedUser(user);
-    // ao abrir, zerar unread desse usuário e limpar notificação relacionada
+    
+    // zerar não lidas ao abrir
     setChatUsers(prev => prev.map(u => u.id === user.id ? { ...u, unread: 0 } : u));
     setArchivedUsers(prev => prev.map(u => u.id === user.id ? { ...u, unread: 0 } : u));
     
-    // remover notificações desse usuário do contexto
+    // remover notificações do usuário
     setNotifications && setNotifications(prev => (prev || []).filter(n => n.userId !== user.id));
     setMessagesMap(prev => {
       if (prev[user.id]) return prev;
@@ -134,7 +137,7 @@ function Mensagens() {
 
   
 
-  // cleanup ao desmontar: liberar pending media URL se houver
+  // cleanup ao desmontar
   useEffect(() => {
     return () => {
       if (pendingMedia && pendingMedia.url) {
@@ -151,12 +154,14 @@ function Mensagens() {
       setPlayingId(null);
       return;
     }
-    // pausar qualquer outro
+    
+    // pausar outro áudio
     if (playingId) {
       const prev = document.getElementById(`audio-${playingId}`);
       if (prev) prev.pause();
     }
-    // attach timeupdate handler to update progress
+
+    // atualizar progresso do áudio
     el.ontimeupdate = () => {
       const dur = el.duration || 0;
       const cur = el.currentTime || 0;
@@ -178,13 +183,7 @@ function Mensagens() {
     setAudioProgress(prev => ({ ...prev, [m.id]: { current: el.currentTime, percent: ratio * 100 } }));
   }, []);
 
-  // preview controls for pending recorded audio
-  
-
-    // MEDIA: abrir picker, tratar seleção, preview e enviar
-    
-
-    // Lightbox handlers
+  // Lightbox handlers
     const openLightbox = (messageId) => {
       if (!selectedUser) return;
       const msgs = (messagesMap[selectedUser.id] || []).filter(m => m.mediaUrl);
@@ -223,25 +222,11 @@ function Mensagens() {
       return () => { document.body.style.overflow = prev; };
     }, [lightboxOpen]);
 
-    // touch handlers for swipe navigation
-    const onLightboxTouchStart = (e) => {
-      if (!e.touches || e.touches.length === 0) return;
-      touchStartXRef.current = e.touches[0].clientX;
-    };
-
-    const onLightboxTouchEnd = (e) => {
-      if (!touchStartXRef.current) return;
-      const endX = (e.changedTouches && e.changedTouches[0] && e.changedTouches[0].clientX) || null;
-      if (endX === null) return;
-      const delta = endX - touchStartXRef.current;
-      const threshold = 50; // px
-      if (delta < -threshold) nextLightbox();
-      if (delta > threshold) prevLightbox();
-      touchStartXRef.current = null;
-    };
-
-    // --- Annotations handled by hook ---
-    const { textMode, toggleTextMode, annotationsMap, onLightboxImageClick, startDrag, editAnnotation, exportAnnotatedImage } = useAnnotations();
+ 
+    // --- Anotações tratadas pelo hook ---
+    // --- Anotações tratadas pelo hook ---
+    const { annotationsMap, onLightboxImageClick, startDrag, editAnnotation } = useAnnotations();
+    
 
   const handleAudioSend = (pending) => {
     if (!pending || !selectedUser) return;
@@ -254,72 +239,32 @@ function Mensagens() {
     pushNotification ? pushNotification(payload) : (setNotifications && setNotifications(prev => [{ id: Date.now(), userId: selectedUser.id, userName: payload.userName, avatar: payload.avatar, text: undefined, time: pending.time }, ...(prev || []).slice(0,49)]));
   };
 
-  // Simula chegada de mensagem do usuário (poderá ser chamado por websocket/intervalo)
-  const receiveMessageFrom = (userId, text) => {
-    // adicionar mensagem
-    setMessagesMap(prev => {
-      const userMsgs = prev[userId] || [];
-      const next = { id: Date.now(), sender: 'them', text, time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) };
-      return { ...prev, [userId]: [...userMsgs, next] };
-    });
-
-    // incrementar unread se não estiver aberto
-    const timeNow = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
-    setChatUsers(prev => prev.map(u => u.id === userId ? { ...u, unread: (u.unread || 0) + (selectedUser && selectedUser.id === userId ? 0 : 1), lastMessage: text, time: timeNow } : u));
-    setArchivedUsers(prev => prev.map(u => u.id === userId ? { ...u, unread: (u.unread || 0) + (selectedUser && selectedUser.id === userId ? 0 : 1), lastMessage: text, time: timeNow } : u));
-
-    // se estiver a conversa aberta com esse user, marcar como lida
-    if (selectedUser && selectedUser.id === userId) {
-      setChatUsers(prev => prev.map(u => u.id === userId ? { ...u, unread: 0 } : u));
-      setArchivedUsers(prev => prev.map(u => u.id === userId ? { ...u, unread: 0 } : u));
-    }
-
-    // mostrar notificação lateral local (se estiver na página) e adicionar ao contexto via pushNotification
-    const user = (chatUsers.find(u => u.id === userId) || archivedUsers.find(u => u.id === userId)) || users.find(u => u.id === userId);
-    const payload = { userId, userName: (user && user.name) || 'Contato', avatar: (user && user.avatar) || null, text, time: timeNow };
-    pushNotification ? pushNotification(payload) : (setNotifications && setNotifications(prev => [{ id: Date.now(), userId, userName: payload.userName, avatar: payload.avatar, text, time: timeNow }, ...(prev || []).slice(0,49)]));
-  };
-
-    // Simulador global movido para MainLayout; aqui não precisamos iniciar outro simulador.
-
-    // quando chega notificação via receiveMessageFrom, também empurrar para o contexto
-    useEffect(() => {
-      // noop: dependências controladas via receiveMessageFrom
-    }, [notifications, setNotifications]);
+   
       // processa mensagens que vieram via messagesBuffer (simulador do contexto)
       useEffect(() => {
         if (!messagesBuffer || Object.keys(messagesBuffer).length === 0) return;
-
-        // para cada userId no buffer, aplicar mensagens localmente
         Object.keys(messagesBuffer).forEach(uid => {
           const msgs = messagesBuffer[uid] || [];
           msgs.forEach(m => {
             const timeNow = m.time || new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
-            // adicionar à lista de mensagens locais
             setMessagesMap(prev => {
               const userMsgs = prev[uid] || [];
               const next = { id: m.id || Date.now(), sender: 'them', text: m.text, time: timeNow };
               return { ...prev, [uid]: [...userMsgs, next] };
             });
-
-            // atualizar unread / lastMessage nas listas locais
             setChatUsers(prev => prev.map(u => u.id === Number(uid) ? { ...u, unread: (u.unread || 0) + ((selectedUser && selectedUser.id === Number(uid)) ? 0 : 1), lastMessage: m.text, time: timeNow } : u));
             setArchivedUsers(prev => prev.map(u => u.id === Number(uid) ? { ...u, unread: (u.unread || 0) + ((selectedUser && selectedUser.id === Number(uid)) ? 0 : 1), lastMessage: m.text, time: timeNow } : u));
-
-            // notificação lateral local (o provedor global também exibirá a notificação)
-            const user = (chatUsers.find(u => u.id === Number(uid)) || archivedUsers.find(u => u.id === Number(uid))) || users.find(u => u.id === Number(uid));
+           
           });
-
-          // limpar esse user do buffer
           setMessagesBuffer(prev => {
             const copy = { ...(prev || {}) };
             delete copy[uid];
             return copy;
           });
         });
-      }, [messagesBuffer]);
+      }, [messagesBuffer, selectedUser, chatUsers, archivedUsers, setMessagesBuffer]);
 
-    // abrir conversa quando pendingOpenUserId for setado (clicou na dropdown)
+    // abrir conversa via dropdown
     useEffect(() => {
       if (!pendingOpenUserId) return;
       const u = [...chatUsers, ...archivedUsers].find(x => x.id === pendingOpenUserId) || users.find(x => x.id === pendingOpenUserId);
@@ -327,32 +272,29 @@ function Mensagens() {
         openConversation(u);
       }
       setPendingOpenUserId && setPendingOpenUserId(null);
-    }, [pendingOpenUserId]);
+    }, [pendingOpenUserId, chatUsers, archivedUsers, openConversation, setPendingOpenUserId]);
 
-    // se a navegação trouxe um openUserId no state (via navigate(..., { state }))
+    // abrir conversa via navegação
     useEffect(() => {
       try {
         const openId = location && location.state && location.state.openUserId;
         if (!openId) return;
         const u = [...chatUsers, ...archivedUsers].find(x => x.id === openId) || users.find(x => x.id === openId);
         if (u) openConversation(u);
-        // limpar o state de navegação para evitar reprocessamento
         navigate(location.pathname, { replace: true, state: {} });
       } catch (err) {
-        // noop
+       
       }
-    }, []);
+    }, [location, chatUsers, archivedUsers, openConversation, navigate]);
 
-    // resposta ao 'marcar tudo como lido' do navbar
+    // marcar tudo como lido
     useEffect(() => {
       if (!clearAll) return;
       setChatUsers(prev => prev.map(u => u.unread && u.unread > 0 ? { ...u, prevUnread: u.unread, unread: 0 } : u));
       setArchivedUsers(prev => prev.map(u => u.unread && u.unread > 0 ? { ...u, prevUnread: u.unread, unread: 0 } : u));
       setClearAll && setClearAll(false);
-    }, [clearAll]);
-  const handleSendMedia = () => {
-    console.log('Enviar midia (placeholder)');
-  };
+    }, [clearAll, setClearAll]);
+  
 
   // alterna estado lido/não lido para um usuário
   const toggleRead = useCallback((userOrId) => {
@@ -373,7 +315,7 @@ function Mensagens() {
       const restored = (u.prevUnread && u.prevUnread > 0) ? u.prevUnread : 1;
       return { ...u, unread: restored, prevUnread: undefined };
     }));
-  }, [selectedUser]);
+  }, []);
 
   const fixados = chatUsers.filter(u => u.fixed);
   const restantes = chatUsers.filter(u => !u.fixed);
@@ -489,7 +431,7 @@ function Mensagens() {
           )}
         </div>
       </div>
-      {/* notificação lateral flutuante */}
+      {/* Notificação lateral flutuante */}
       
       {confirmUser && (
         <ConfirmModal

@@ -285,20 +285,4 @@
   .side-bar.side-bar--collapsed {
     display: none;
   }
-  .btn-close-sidebar {
-    display: block;
-    position: absolute;
-    top: 0.6rem;
-    right: 0.6rem;
-    width: 2.4rem;
-    height: 2.4rem;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-  }
-  .btn-close-sidebar::before {
-    content: '\00d7';
-    font-size: 1.25rem;
-    color: var(--color-text-primary);
-  }
 }
